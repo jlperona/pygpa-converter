@@ -2,6 +2,8 @@ import argparse
 import csv
 import sys
 
+from scales import america
+
 class Student:
 
     def __init__(self, id_primary, id_secondary, scale_type):
@@ -36,15 +38,17 @@ class Student:
 class Course:
 
     def __init__(self, units, given_grade, scale_type):
-        self.units = units
+        self.units = float(units)
         self.given_grade = given_grade
         self.scale_type = scale_type
         self.letter_grade = None
         self.letter_grade_points = None
 
     def convert_to_letter(self):
-        # (TO DO) Write conversion scales and letter to 4 logic
-        return
+        if self.scale_type == 'United States':
+            self.letter_grade = america.convert_united_states(self.given_grade)
+
+        self.letter_grade_points = float(america.convert_letter_to_4(self.letter_grade))
 
 parser = argparse.ArgumentParser(
     description = 'Take in a CSV file with student transcript data. '
@@ -122,7 +126,7 @@ with open(args.infile) as infile:
             except StopIteration:
                 grade_exception = str('Odd number of class data for student '
                     + str(id_primary) + ', line ' + str(line_number) + '.')
-                raise Exception(grade_exception) from None
+                raise Exception(grade_exception)
 
             current_student.add_course(Course(current_units, current_grade, scale_type))
 
@@ -133,7 +137,10 @@ for current_student in all_students:
 # write results to output file
 if args.outfile:
     with open(args.outfile, 'w') as outfile:
-        outfile.write('Write to file\n')
+        for current_student in all_students:
+            out_string = str(current_student.id_primary + ' - ' + current_student.id_secondary + ' | GPA: ' + '{:.3f}'.format(current_student.final_gpa) + ', Units: ' + str(current_student.unit_sum) + '\n')
+            outfile.write(out_string)
 else:
-    sys.stdout.write('Write to stdout\n')
-    # (TO DO) Write converted output to file
+    for current_student in all_students:
+        out_string = str(current_student.id_primary + ' - ' + current_student.id_secondary + ' | GPA: ' + '{:.3f}'.format(current_student.final_gpa) + ', Units: ' + str(current_student.unit_sum) + '\n')
+        sys.stdout.write(out_string)
