@@ -17,7 +17,7 @@ def parse_input(args, all_students):
             line_number = csvreader.line_num
 
             row_it = iter(row)
-            column_number = 0
+            column_number = -1
 
             # process first three columns with non-course data
             try:
@@ -30,7 +30,9 @@ def parse_input(args, all_students):
                 column_number += 1
                 scale_type = next(row_it)
             except StopIteration:
-                raise Exception()
+                invalid_student_exception = str('Not enough data input on line '
+                    + str(line_number) + '.')
+                raise Exception(invalid_student_exception) from None
 
             # create new student
             current_student = Student(id_primary, id_secondary, scale_type, line_number)
@@ -57,18 +59,19 @@ def parse_input(args, all_students):
 
                     # if string is empty, then there's an issue with the data
                     if not current_grade:
-                        grade_exception = str('Odd number of class data for student '
+                        odd_data_exception = str('Odd number of class data for student '
                             + str(id_primary) + ', line ' + str(line_number) + '.')
-                        raise Exception(grade_exception)
+                        raise Exception(odd_data_exception)
                 # if iterator stops, then there's an issue with the data
                 except StopIteration:
-                    grade_exception = str('Odd number of class data for student '
+                    odd_data_exception = str('Odd number of class data for student '
                         + str(id_primary) + ', line ' + str(line_number) + '.')
-                    raise Exception(grade_exception)
+                    raise Exception(odd_data_exception) from None
 
                 current_student.add_course(Course(current_units, current_grade, scale_type, line_number, column_number))
 
+            # if no courses added, then no courses were input
             if len(current_student.courses) == 0:
                 zero_courses_exception = str('No courses input for student '
-                    + str(id_primary) + ', line ')
-                raise Exception()
+                    + str(id_primary) + ', line ' + str(line_number) + '.')
+                raise Exception(zero_courses_exception)

@@ -2,22 +2,26 @@
 # only verifies validity of the input grade
 def convert_united_states(input):
     # length of input should only be one or two characters, example "A" or "A-"
-    if not (len(input) != 1 or len(input) != 2):
+    if not (len(input) == 1 or len(input) == 2):
         raise ValueError
 
-    if not (input[0] == 'A' or input[0] == 'B' or input[0] == 'C' or input[0] == 'D' or input[0] == 'F'):
+    caps_input = input.upper()
+
+    if not (caps_input[0] == 'A' or caps_input[0] == 'B' or caps_input[0] == 'C' or caps_input[0] == 'D' or caps_input[0] == 'F'):
         raise ValueError
 
-    if len(input) == 2:
-        if not (input[1] == '+' or input[1] == '-'):
+    if len(caps_input) == 2:
+        if not (caps_input[1] == '+' or caps_input[1] == '-'):
             raise ValueError
 
-    return input
+    return caps_input
 
 # conversion function for United States letter grades
 # transforms letter grades into their numerical equivalents
+# note that this is function is only run on outputs from conversion functions
+# thus, if an exception occurs in here, there's something wrong with that conversion function
 def convert_letter_to_4(input):
-    current_points = -1
+    current_points = -1.0
 
     # handle first character
     if input[0] == 'A':
