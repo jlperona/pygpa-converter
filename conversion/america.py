@@ -76,6 +76,22 @@ def convert_brazil_single(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Brazil double letter grades
+# double letter grades
+def convert_brazil_double(input):
+    grade = input.upper()
+
+    if grade == 'SS':
+        return 'A'
+    elif grade == 'MS':
+        return 'B'
+    elif grade == 'MM':
+        return 'C'
+    elif grade == 'MI' or grade == 'II':
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for United States
 # letter grades
 # only verifies validity of the input grade

@@ -42,6 +42,8 @@ class Course:
                 self.letter_grade = america.convert_brazil(self.given_grade)
             elif self.scale_type == 'Brazil Single':
                 self.letter_grade = america.convert_brazil_single(self.given_grade)
+            elif self.scale_type == 'Brazil Double':
+                self.letter_grade = america.convert_brazil_double(self.given_grade)
             elif self.scale_type == 'United States':
                 self.letter_grade = america.convert_united_states(self.given_grade)
             else: # no such grade scale exists
