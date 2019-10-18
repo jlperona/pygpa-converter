@@ -33,6 +33,8 @@ class Course:
             if self.scale_type == '4':
                 self.letter_grade_points = america.convert_4(self.given_grade)
                 return
+            elif self.scale_type == 'Argentina':
+                self.letter_grade = america.convert_argentina(self.given_grade)
             elif self.scale_type == 'United States':
                 self.letter_grade = america.convert_united_states(self.given_grade)
             else: # no such grade scale exists

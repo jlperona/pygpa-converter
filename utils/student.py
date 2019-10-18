@@ -44,5 +44,5 @@ class Student:
 
     # string containing final gpa
     def output_gpa(self):
-        return str(self.id_primary + ' - ' + self.id_secondary + ' | GPA: ' +
+        return str(self.id_primary + ' - ' + self.id_secondary + ' (' + self.scale_type + ') | GPA: ' +
             '{:.3f}'.format(self.final_gpa) + ', Units: ' + str(self.unit_sum) + '\n')
