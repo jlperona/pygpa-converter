@@ -36,6 +36,28 @@ def convert_argentina(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Brazil
+# number grades
+# numbers range from 0 - 100
+def convert_brazil(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 90 and grade <= 100:
+        return 'A'
+    elif grade >= 70 and grade < 90:
+        return 'B'
+    elif grade >= 50 and grade < 70:
+        return 'C'
+    elif grade >= 30 and grade < 50:
+        return 'D'
+    elif grade >= 0 and grade < 30:
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for United States
 # letter grades
 # only verifies validity of the input grade

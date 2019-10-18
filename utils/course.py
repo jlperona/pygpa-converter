@@ -22,9 +22,12 @@ class Course:
         # attempt conversion of units to float
         try:
             self.units = float(units)
+
+            if self.units < 0:
+                raise ValueError
         except ValueError: # invalid unit input
-            invalid_units_exception = str('Invalid units input \'' + units
-                + '\' at row ' + str(self.row) + ', column ' + self.units_column + '.')
+            invalid_units_exception = str('Invalid unit input \'' + units
+                + '\' at cell \'' + self.units_column + str(self.row) + '\'.')
             raise Exception(invalid_units_exception) from None
 
     # convert given grade to United States letter grade using a conversion function
@@ -35,15 +38,17 @@ class Course:
                 return
             elif self.scale_type == 'Argentina':
                 self.letter_grade = america.convert_argentina(self.given_grade)
+            elif self.scale_type == 'Brazil':
+                self.letter_grade = america.convert_brazil(self.given_grade)
             elif self.scale_type == 'United States':
                 self.letter_grade = america.convert_united_states(self.given_grade)
             else: # no such grade scale exists
                 invalid_grade_scale_exception = str('Invalid grade scale \'' + self.scale_type
-                    + '\' at row ' + str(self.row) + ', column C.')
+                    + '\' at cell \'C' + str(self.row) + '\'.')
                 raise Exception(invalid_grade_scale_exception)
         except ValueError: # conversion function raised invalid input
-            invalid_grade_exception = str('Invalid grade for scale type \'' + self.scale_type
-                + '\' at row ' + str(self.row) + ', column ' + self.grade_column + '.')
+            invalid_grade_exception = str('Invalid grade \'' + self.given_grade + '\' for scale type \'' + self.scale_type
+                + '\' at cell \'' + self.grade_column + str(self.row) + '\'.')
             raise Exception(invalid_grade_exception) from None
 
         # convert United States letter grade to grade points
@@ -52,9 +57,8 @@ class Course:
         # if this fails then there's a problem with the relevant conversion function
         except ValueError:
             invalid_us_letter_grade_exception = str('Input grade \'' + self.letter_grade
-                + '\' for grade scale \'' + self.scale_type + '\' at row ' + str(self.row)
-                + ', column ' + self.grade_column
-                + ', caused an internal error.\n'
+                + '\' for grade scale \'' + self.scale_type + '\' at cell \'' + self.grade_column
+                + str(self.row) + '\' caused an internal error.\n'
                 + 'This usually means that the conversion function for \'' + self.scale_type
                 + '\' has a bug in it.\nPlease report this on GitHub or via email.')
             raise Exception(invalid_us_letter_grade_exception) from None

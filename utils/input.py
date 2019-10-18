@@ -31,7 +31,7 @@ def parse_input(args, all_students):
                 column_number += 1
                 scale_type = next(row_it)
             except StopIteration:
-                invalid_student_exception = str('Not enough data input on line '
+                invalid_student_exception = str('Not enough data input on row '
                     + str(line_number) + '.')
                 raise Exception(invalid_student_exception) from None
 
@@ -61,12 +61,12 @@ def parse_input(args, all_students):
                     # if string is empty, then there's an issue with the data
                     if not current_grade:
                         odd_data_exception = str('Odd number of class data for student '
-                            + str(id_primary) + ', line ' + str(line_number) + '.')
+                            + str(id_primary) + ', row ' + str(line_number) + '.')
                         raise Exception(odd_data_exception)
                 # if iterator stops, then there's an issue with the data
                 except StopIteration:
                     odd_data_exception = str('Odd number of class data for student '
-                        + str(id_primary) + ', line ' + str(line_number) + '.')
+                        + str(id_primary) + ', row ' + str(line_number) + '.')
                     raise Exception(odd_data_exception) from None
 
                 current_student.add_course(
@@ -75,5 +75,5 @@ def parse_input(args, all_students):
             # if no courses added, then no courses existed in the input
             if len(current_student.courses) == 0:
                 zero_courses_exception = str('No courses input for student '
-                    + str(id_primary) + ', line ' + str(line_number) + '.')
+                    + str(id_primary) + ', row ' + str(line_number) + '.')
                 raise Exception(zero_courses_exception)
