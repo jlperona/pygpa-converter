@@ -126,6 +126,30 @@ def convert_canada_british_columbia(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Ontario, Canada
+# number grades
+# grades range from 0 - 100
+def convert_canada_ontario(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 90 and grade <= 100:
+        return 'A+'
+    elif grade >= 80 and grade < 90:
+        return 'A'
+    elif grade >= 70 and grade < 80:
+        return 'B'
+    elif grade >= 60 and grade < 70:
+        return 'C'
+    elif grade >= 50 and grade < 60:
+        return 'D'
+    elif grade >= 0 and grade < 50:
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for United States
 # letter grades
 # only verifies validity of the input grade

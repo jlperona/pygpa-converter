@@ -67,6 +67,9 @@ The following grade scales have been implemented.
 * `Canada British Columbia`
     * Most common scale in British Columbia, Canada.
     * Grades range from 0 - 100.
+* `Canada Ontario`
+    * Most common scale in Ontario, Canada.
+    * Grades range from 0 - 100.
 * `United States`
     * 4.0 scale used in the United States.
     * Also used in Brazil, Canada, China, Hong Kong, Japan, and Taiwan.
@@ -133,7 +136,7 @@ If you have any that you would like to add, feel free to make a [pull request](h
 If you would like to see a clean example of how to add a new grade scale, see the following example commits:
 
 * [*Brazil Single*](https://github.com/jlperona/pygpa-converter/commit/6711dc104f185cc03e64ba18f131062bf6e34245) for letter grade scales
-* *TBA* for number grade scales
+* [*Canada British Columbia*](https://github.com/jlperona/pygpa-converter/commit/fe1728b14789527e5da4c834c18670a55f184460) for number grade scales
 * *TBA* for mixed grade scales
 
 Below are the steps to add a new scale:
