@@ -54,6 +54,9 @@ The following grade scales have been implemented.
 * `Brazil`
     * Most common grade scale in Brazil.
     * Grades range from 0 - 100.
+* `Brazil Single`
+    * Partner scale to `Brazil` above.
+    * Single letter grades.
 * `United States`
     * 4.0 scale used in the United States.
     * Also used in Brazil, Canada, China, Hong Kong, Japan, and Taiwan.

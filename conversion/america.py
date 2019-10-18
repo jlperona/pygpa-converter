@@ -58,6 +58,24 @@ def convert_brazil(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Brazil single letter grades
+# single letter grades
+def convert_brazil_single(input):
+    grade = input.upper()
+
+    if grade == 'A':
+        return 'A'
+    elif grade == 'B':
+        return 'B'
+    elif grade == 'C':
+        return 'C'
+    elif grade == 'D':
+        return 'D'
+    elif grade == 'F':
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for United States
 # letter grades
 # only verifies validity of the input grade
