@@ -60,6 +60,9 @@ class Course:
 
             elif self.scale_type == 'China':
                 self.letter_grade = asia.convert_china(self.given_grade)
+            elif self.scale_type == 'China Modified':
+                self.letter_grade_points = asia.convert_china_modified(self.given_grade)
+                return
 
             ### INVALID SECTION
 

@@ -82,7 +82,10 @@ The following grade scales have been implemented.
 * `China`
     * Most common scale in China.
     * Grades range from 0 - 100.
-
+* `China Modified`
+    * The Chinese conversion scale has been modified to use the one in use at UC Davis.
+    * Grades range from 0 - 100.
+    
 ## Motivation
 
 ### Why Python?
