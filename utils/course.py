@@ -1,5 +1,6 @@
 import conversion.america as america
 import conversion.asia as asia
+import conversion.india as india
 
 import utils.excel
 
@@ -65,6 +66,11 @@ class Course:
                 return
             elif self.scale_type == 'Taiwan':
                 self.letter_grade = asia.convert_taiwan(self.given_grade)
+
+            ### INDIA SECTION
+
+            elif self.scale_type == 'India 100':
+                self.letter_grade = india.convert_india_100(self.given_grade)
 
             ### INVALID SECTION
 

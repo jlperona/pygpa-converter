@@ -89,6 +89,12 @@ The following grade scales have been implemented.
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.
 
+### India
+
+* `India 100`
+    * 100 point scale in India.
+    * Grades range from 0 - 100.
+
 ## Motivation
 
 ### Why Python?
