@@ -1,4 +1,6 @@
 import conversion.america as america
+import conversion.asia as asia
+
 import utils.excel
 
 # representation of a course defined via each line of the input csv file
@@ -33,6 +35,9 @@ class Course:
     # convert given grade to United States letter grade using a conversion function
     def convert_to_letter(self):
         try:
+
+            ### AMERICA SECTION
+
             if self.scale_type == '4':
                 self.letter_grade_points = america.convert_4(self.given_grade)
                 return
@@ -50,6 +55,14 @@ class Course:
                 self.letter_grade = america.convert_canada_ontario(self.given_grade)
             elif self.scale_type == 'United States' or self.scale_type == 'Canada':
                 self.letter_grade = america.convert_united_states(self.given_grade)
+
+            ### ASIA SECTION
+
+            elif self.scale_type == 'China':
+                self.letter_grade = asia.convert_china(self.given_grade)
+
+            ### INVALID SECTION
+
             else: # no such grade scale exists
                 invalid_grade_scale_exception = str('Invalid grade scale \'' + self.scale_type
                     + '\' at cell \'C' + str(self.row) + '\'.')

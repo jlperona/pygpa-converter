@@ -77,6 +77,12 @@ The following grade scales have been implemented.
         * Can also convert the 4.3 scale where A+ is equivalent to 4.3.
     * Letter grades. For numerical grades, see `4.0` above.
 
+### Asia (excluding India)
+
+* `China`
+    * Most common scale in China.
+    * Grades range from 0 - 100.
+
 ## Motivation
 
 ### Why Python?
