@@ -96,7 +96,7 @@ def convert_brazil_double(input):
 # letter grades
 # only verifies validity of the input grade
 def convert_united_states(input):
-    # length of input should only be one or two characters, example "A" or "A-"
+    # length of input should only be one or two characters, example 'A' or 'A-'
     if not (len(input) == 1 or len(input) == 2):
         raise ValueError
 

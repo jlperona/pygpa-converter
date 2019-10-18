@@ -60,6 +60,10 @@ The following grade scales have been implemented.
 * `Brazil Double`
     * Double letter grade scale used in Brazil.
     * Double letter grades.
+* `Canada`
+    * Alias of `United States`.
+    * See `United States` below for more information.
+    * Letter grades.
 * `United States`
     * 4.0 scale used in the United States.
     * Also used in Brazil, Canada, China, Hong Kong, Japan, and Taiwan.
