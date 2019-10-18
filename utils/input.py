@@ -3,6 +3,7 @@ import csv
 from utils.student import Student
 from utils.course import Course
 
+# read input file and place parsed data in all_students
 def parse_input(args, all_students):
     # open file and begin reading data
     with open(args.infile) as infile:
@@ -68,9 +69,10 @@ def parse_input(args, all_students):
                         + str(id_primary) + ', line ' + str(line_number) + '.')
                     raise Exception(odd_data_exception) from None
 
-                current_student.add_course(Course(current_units, current_grade, scale_type, line_number, column_number))
+                current_student.add_course(
+                    Course(current_units, current_grade, scale_type, line_number, column_number))
 
-            # if no courses added, then no courses were input
+            # if no courses added, then no courses existed in the input
             if len(current_student.courses) == 0:
                 zero_courses_exception = str('No courses input for student '
                     + str(id_primary) + ', line ' + str(line_number) + '.')

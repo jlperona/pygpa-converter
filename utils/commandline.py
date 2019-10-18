@@ -24,7 +24,7 @@ def argument_parsing():
     parser.add_argument('-n',
         '--noheader',
         action = 'store_true',
-        help = 'Treat the first line of the file as data rather than skipping it.'
+        help = 'Treat the first row of the file as data rather than skipping it.'
     )
 
     return parser.parse_args()

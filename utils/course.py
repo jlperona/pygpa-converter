@@ -1,6 +1,8 @@
 import conversion.america as america
 import utils.excel
 
+# representation of a course defined via each line of the input csv file
+# also contains helper functions to convert the course to the United States grade scale
 class Course:
 
     def __init__(self, units, given_grade, scale_type, row, column):
@@ -12,37 +14,40 @@ class Course:
         self.letter_grade = None
         self.letter_grade_points = None
 
-        # debugging. note that courses take two columns in the input CSV file
+        # debugging, note that courses take two columns in the input CSV file
         self.row = row
         self.units_column = utils.excel.column_number_to_string(column)
         self.grade_column = utils.excel.column_number_to_string(column + 1)
 
+        # attempt conversion of units to float
         try:
             self.units = float(units)
-        except ValueError:
-            invalid_units_exception = str('Invalid units input at line '
-                + str(self.row) + ', column ' + self.units_column + '.')
+        except ValueError: # invalid unit input
+            invalid_units_exception = str('Invalid units input \'' + units
+                + '\' at row ' + str(self.row) + ', column ' + self.units_column + '.')
             raise Exception(invalid_units_exception) from None
 
+    # convert given grade to United States letter grade using a conversion function
     def convert_to_letter(self):
         try:
             if self.scale_type == 'United States':
                 self.letter_grade = america.convert_united_states(self.given_grade)
-            else:
+            else: # no such grade scale exists
                 invalid_grade_scale_exception = str('Invalid grade scale \'' + self.scale_type
-                    + '\' at line ' + str(self.row) + ', column C.')
+                    + '\' at row ' + str(self.row) + ', column C.')
                 raise Exception(invalid_grade_scale_exception)
-        except ValueError:
+        except ValueError: # conversion function raised invalid input
             invalid_grade_exception = str('Invalid grade for scale type \'' + self.scale_type
-                + '\' at line ' + str(self.row) + ', column ' + self.grade_column + '.')
+                + '\' at row ' + str(self.row) + ', column ' + self.grade_column + '.')
             raise Exception(invalid_grade_exception) from None
 
-        # if this fails then there's a problem with the conversion function
+        # convert United States letter grade to grade points
         try:
             self.letter_grade_points = float(america.convert_letter_to_4(self.letter_grade))
+        # if this fails then there's a problem with the relevant conversion function
         except ValueError:
             invalid_us_letter_grade_exception = str('Input grade \'' + self.letter_grade
-                + '\' for grade scale \'' + self.scale_type + '\' at line ' + str(self.row)
+                + '\' for grade scale \'' + self.scale_type + '\' at row ' + str(self.row)
                 + ', column ' + self.grade_column
                 + ', caused an internal error.\n'
                 + 'This usually means that the conversion function for \'' + self.scale_type

@@ -18,14 +18,21 @@ class Student:
         # debugging
         self.row = row
 
+    # push course into student's list of courses
     def add_course(self, course):
         self.courses.append(course)
 
+    # convert all courses in the student's list to United States equivalent
     def convert_classes(self):
         for current_course in self.courses:
             current_course.convert_to_letter()
 
+    # calculate final gpa from converted courses
     def calculate_gpa(self):
+        # gpa formula (c = class)
+        # numerator = c1 units * c1 grade points + c2 units * c2 grade points + ...
+        # denominator = c1 units + c2 units + ...
+        # final gpa = numerator / denominator
         self.grade_point_sum = 0
         self.unit_sum = 0
 
@@ -35,6 +42,7 @@ class Student:
 
         self.final_gpa = self.grade_point_sum / self.unit_sum
 
+    # string containing final gpa
     def output_gpa(self):
         return str(self.id_primary + ' - ' + self.id_secondary + ' | GPA: ' +
             '{:.3f}'.format(self.final_gpa) + ', Units: ' + str(self.unit_sum) + '\n')
