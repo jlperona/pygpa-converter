@@ -69,6 +69,8 @@ class Course:
 
             ### INDIA SECTION
 
+            elif self.scale_type == 'India 10':
+                self.letter_grade = india.convert_india_10(self.given_grade)
             elif self.scale_type == 'India 100':
                 self.letter_grade = india.convert_india_100(self.given_grade)
 

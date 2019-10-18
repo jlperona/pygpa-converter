@@ -1,0 +1,37 @@
+India 10,10,9,8,7,6,5,4,3,2,1,0
+Anna,O,A+,A,B+,B,,,,,,"RA, SA"
+BITS Pilani,A,A-,B,B-,C,C-,D,,E,,
+IIT Bombay,"AP, AA",AB,BB,BC,CC,CD,DD,,,,"EE, FF, FR, DX"
+IIT Delhi,A,A-,B,B-,C,C-,D,,E,,F
+IIT Gandhinagar,"A+, A",A-,B,B-,C,C-,D,,E,,F
+IIT Guwahati,"AS, AA",AB,BB,BC,CC,CD,DD,,,,F
+IIT Indore,"AP, AA",AB,BB,BC,CC,CD,DD,,,,"FR, XX"
+IIT Jodhpur,A,,B,,C,,D,,F,,
+IIT Kanpur,"A*, A",,B,,C,,D,,E,,F
+IIT Kharagpur,EX,A,B,C,D,P,,,,,F
+IIT Madras,S,A,B,C,D,,E,,,,U
+IIT Palakkad,S,A,B,C,D,,E,,,,U
+IIT Patna,AA,AB,BB,BC,CC,CD,DD,,,,F
+IIT Roorkee,A+,A,B+,B,C+,C,D,,E,,"F, FS"
+IIT Varanasi,"A+, A",A-,B,B-,C,C-,,,,,F
+JIIT Noida,A+,A,B+,B,C+,C,D,,,,F
+KIIT,O,E,A,B,C,D,,,F,,
+Manipal,A+,A,B,C,D,E,,,,,"F, I, DT"
+Nirma,A+,A,B+,B,C+,C,,,,,
+NIT Agartala,EX,A,B,C,D,P,,,,,"X, F, I, FA"
+NIT Calicut,S,A,B,C,D,E,R,,,,"F, W"
+NIT Goa,S,A,B,C,D,P,,,,,"F, W"
+NIT Jamshedpur,O,A,B,C,D,E,P,,,,F
+NIT Karnataka,AA,AB,BB,BC,CC,CD,DD,,,,"FF, FA"
+NIT Kurukshetra,S,A,B,C,D,E,,,,,F
+NIT Raipur,A+,A,B+,B,C+,C,,,,,F
+NIT Rourkela,Ex,A,B,C,D,P,,,F,,
+NIT Silchar,AA,AB,BB,BC,CC,CD,DD,,,,F
+NIT Tiruchirappali,S,A,B,C,D,R,,,,,F
+NIT Warangal,EX,A,B,C,D,P,,,,,
+RIT,S,A,B,C,,D,E,,,,F
+Savitribai Phule Pune,O,A,B,C,D,E,,,,,F
+SRM,O,A+,A,B+,B,C,P,,,,"F, Ab, I"
+Thapar,"A+, A",,B,,C,,D,,E,,F
+Vishwakarma,AA,AB,BB,BC,CC,CD,DD,,,,"FF, FR"
+VIT,S,A,B,C,D,E,F,N,,,

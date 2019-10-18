@@ -91,9 +91,22 @@ The following grade scales have been implemented.
 
 ### India
 
+* `India 10`
+    * UGC 10 point scale in India.
+    * Grades range from 0 - 10.
+    * *See below for special information about this scale.*
 * `India 100`
     * 100 point scale in India.
     * Grades range from 0 - 100.
+
+### Indian 10 Point Scale
+
+The Indian 10 point scale (`India 10` above) is somewhat unique, in that many universities use the 10 point scale, but add their own letter grades.
+Typing in letter grades is easier than doing the conversion manually, so there are grade scales that support each university's specific letter grades.
+
+The file `data/india10.csv` contains the translations from letter grades to the 10 point scale for universities that I've encountered.
+Eventually, the program will be updated to use the grade scales from this file.
+For right now, use the `India 10` scale above.
 
 ## Motivation
 
