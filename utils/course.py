@@ -30,7 +30,10 @@ class Course:
     # convert given grade to United States letter grade using a conversion function
     def convert_to_letter(self):
         try:
-            if self.scale_type == 'United States':
+            if self.scale_type == '4':
+                self.letter_grade_points = america.convert_4(self.given_grade)
+                return
+            elif self.scale_type == 'United States':
                 self.letter_grade = america.convert_united_states(self.given_grade)
             else: # no such grade scale exists
                 invalid_grade_scale_exception = str('Invalid grade scale \'' + self.scale_type

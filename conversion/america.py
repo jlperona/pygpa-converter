@@ -1,3 +1,15 @@
+# conversion function for grades that are already in grade point form
+def convert_4(input):
+    try:
+        grade = float(input)
+    except ValueError:
+        raise
+
+    if grade > 4.3 or grade < 0:
+        raise ValueError
+    else:
+        return min(4.0, grade)
+
 # conversion function for United States letter grades
 # only verifies validity of the input grade
 def convert_united_states(input):
