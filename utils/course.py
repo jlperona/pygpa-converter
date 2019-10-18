@@ -73,6 +73,8 @@ class Course:
                 self.letter_grade = india.convert_india_10(self.given_grade)
             elif self.scale_type == 'India 100':
                 self.letter_grade = india.convert_india_100(self.given_grade)
+            elif self.scale_type == 'India Marks':
+                self.letter_grade = india.convert_india_marks(self.given_grade, self.units)
 
             ### INVALID SECTION
 

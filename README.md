@@ -98,6 +98,13 @@ The following grade scales have been implemented.
 * `India 100`
     * 100 point scale in India.
     * Grades range from 0 - 100.
+* `India Marks`
+    * Scale for certain universities in India.
+        * Useful when the university only uses marks and does not provide an equivalent to units.
+        * Uses the same scale as `India 100`.
+        * Calculates the percentage based on the units input being equal to 100%.
+        * For example, 200 units with a grade of 150 is equal to 150/200 = 75%.
+    * Grades range from 0 to the number of units input.
 
 ### Indian 10 Point Scale
 
