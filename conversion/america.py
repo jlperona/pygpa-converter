@@ -92,6 +92,40 @@ def convert_brazil_double(input):
     else: # invalid
         raise ValueError
 
+# conversion function for British Columbia, Canada
+# number grades
+# grades range from 0 - 100
+def convert_canada_british_columbia(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 90 and grade <= 100:
+        return 'A+'
+    elif grade >= 85 and grade < 90:
+        return 'A'
+    elif grade >= 80 and grade < 85:
+        return 'A-'
+    elif grade >= 76 and grade < 80:
+        return 'B+'
+    elif grade >= 72 and grade < 76:
+        return 'B'
+    elif grade >= 68 and grade < 72:
+        return 'B-'
+    elif grade >= 64 and grade < 68:
+        return 'C+'
+    elif grade >= 60 and grade < 64:
+        return 'C'
+    elif grade >= 55 and grade < 60:
+        return 'C-'
+    elif grade >= 50 and grade < 55:
+        return 'D'
+    elif grade >= 0 and grade < 50:
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for United States
 # letter grades
 # only verifies validity of the input grade

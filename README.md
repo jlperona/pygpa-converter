@@ -64,6 +64,9 @@ The following grade scales have been implemented.
     * Alias of `United States`.
     * See `United States` below for more information.
     * Letter grades.
+* `Canada British Columbia`
+    * Most common scale in British Columbia, Canada.
+    * Grades range from 0 - 100.
 * `United States`
     * 4.0 scale used in the United States.
     * Also used in Brazil, Canada, China, Hong Kong, Japan, and Taiwan.
