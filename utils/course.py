@@ -3,6 +3,7 @@ import conversion.core
 import utils.excel
 
 # country function imports
+import conversion.africa
 import conversion.america
 import conversion.asia
 import conversion.india
@@ -40,9 +41,14 @@ class Course:
     def convert_to_letter(self):
         try:
 
+            ### AFRICA SECTION
+
+            if self.scale_type == 'Nigeria':
+                self.letter_grade = conversion.africa.convert_nigeria(self.given_grade)
+
             ### AMERICA SECTION
 
-            if self.scale_type == '4':
+            elif self.scale_type == '4':
                 self.letter_grade_points = conversion.america.convert_4(self.given_grade)
                 return
             elif self.scale_type == 'Argentina':

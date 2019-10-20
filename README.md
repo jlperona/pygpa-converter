@@ -43,6 +43,12 @@ The appropriate string below goes in the *Grade Scale* column for each student.
 
 The following grade scales have been implemented.
 
+### Africa
+
+* `Nigeria`
+    * Most common scale in Nigeria.
+    * Letter grades.
+
 ### America
 
 * `4`
