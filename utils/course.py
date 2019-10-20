@@ -19,8 +19,8 @@ class Course:
 
         # debugging, note that courses take two columns in the input CSV file
         self.row = row
-        self.units_column = utils.excel.column_number_to_string(column)
-        self.grade_column = utils.excel.column_number_to_string(column + 1)
+        self.units_column = int(column)
+        self.grade_column = int(column + 1)
 
         # attempt conversion of units to float
         try:
@@ -30,7 +30,7 @@ class Course:
                 raise ValueError
         except ValueError: # invalid unit input
             invalid_units_exception = str('Invalid unit input \'' + units
-                + '\' at cell \'' + self.units_column + str(self.row) + '\'.')
+                + '\' at cell \'' + utils.excel.col_row_to_cell(self.units_column, self.row) + '\'.')
             raise Exception(invalid_units_exception) from None
 
     # convert given grade to United States letter grade using a conversion function
@@ -88,7 +88,7 @@ class Course:
                 raise Exception(invalid_grade_scale_exception)
         except ValueError: # conversion function raised invalid input
             invalid_grade_exception = str('Invalid grade \'' + self.given_grade + '\' for scale type \'' + self.scale_type
-                + '\' at cell \'' + self.grade_column + str(self.row) + '\'.')
+                + '\' at cell \'' + utils.excel.col_row_to_cell(self.grade_column, self.row) + '\'.')
             raise Exception(invalid_grade_exception) from None
 
         # convert United States letter grade to grade points
@@ -96,9 +96,11 @@ class Course:
             self.letter_grade_points = float(conversion.america.convert_letter_to_4(self.letter_grade))
         # if this fails then there's a problem with the relevant conversion function
         except ValueError:
-            invalid_us_letter_grade_exception = str('Input grade \'' + self.letter_grade
-                + '\' for grade scale \'' + self.scale_type + '\' at cell \'' + self.grade_column
-                + str(self.row) + '\' caused an internal error.\n'
+            invalid_us_letter_grade_exception = str('Converted input grade \'' + self.letter_grade
+                + '\' from original input grade \'' + self.given_grade
+                + '\' for grade scale \'' + self.scale_type + '\' at cell \''
+                + utils.excel.col_row_to_cell(self.grade_column, self.row)
+                + '\' caused an internal error.\n'
                 + 'This usually means that the conversion function for \'' + self.scale_type
                 + '\' has a bug in it.\nPlease report this on GitHub or via email.')
             raise Exception(invalid_us_letter_grade_exception) from None
