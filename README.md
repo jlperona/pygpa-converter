@@ -48,6 +48,9 @@ The following grade scales have been implemented.
 * `Nigeria`
     * Most common scale in Nigeria.
     * Letter grades.
+* `South Africa`
+    * Most common scale in South Africa.
+    * Grades range from 0 - 100.
 
 ### America
 

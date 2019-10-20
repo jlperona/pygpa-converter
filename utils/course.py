@@ -45,6 +45,8 @@ class Course:
 
             if self.scale_type == 'Nigeria':
                 self.letter_grade = conversion.africa.convert_nigeria(self.given_grade)
+            elif self.scale_type == 'South Africa':
+                self.letter_grade = conversion.africa.convert_south_africa(self.given_grade)
 
             ### AMERICA SECTION
 
