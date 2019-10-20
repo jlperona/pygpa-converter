@@ -7,11 +7,11 @@ This is a Python rewrite of [jlperona/gpa-converter](https://github.com/jlperona
 
 ### Version
 
-This is a Python 3 script.
+Python 3.6 or later is required due to a usage of `open()` with `Path` from `pathlib`.
 
 ### Dependencies
 
-This script does not use any packages that aren't provided in base Python.
+This script does not use any packages that aren't provided in base Python as of Python 3.4.
 
 ## Use
 
@@ -22,7 +22,7 @@ This script does not use any packages that aren't provided in base Python.
 Use `-n` or `--no-header` if your data does not have a header row.
 Output will be written to `stdout` if `outfile` is not specified.
 If specified, the file will be overwritten with the final GPA data.
-For more help with command line arguments, run the program with `-v`.
+For more help with command line arguments, run the program with `-h`.
 
 ### Input CSV File
 

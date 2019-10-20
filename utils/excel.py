@@ -1,5 +1,5 @@
 # based on a post from StackOverflow
-# https://stackoverflow.com/questions/23861680/convert-spreadsheet-number-to-column-letter
+# https://stackoverflow.com/a/23862195
 def col_num_to_str(n):
     string = ''
     while n > 0:

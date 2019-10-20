@@ -2,6 +2,7 @@
 import sys
 
 # relative imports
+import data.india10
 from utils.student import Student
 import utils.commandline
 import utils.input
@@ -13,6 +14,9 @@ all_students = []
 
 # input file processing
 utils.input.parse_input(args, all_students)
+
+india_10_dict = {}
+data.india10.parse_india_10_csv(india_10_dict)
 
 # data processing
 for current_student in all_students:
