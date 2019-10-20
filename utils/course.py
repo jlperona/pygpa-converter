@@ -45,10 +45,10 @@ class Course:
                 converted_number = india_10_dict[self.scale_type][self.given_grade.upper()]
                 self.letter_grade = conversion.india.convert_india_10(converted_number)
             except KeyError:
-                invalid_grade_exception = str('Invalid grade \'' + self.given_grade
+                invalid_india_10_grade_exception = str('Invalid grade \'' + self.given_grade
                     + '\' for scale type \'' + self.scale_type + '\' at cell \''
                     + utils.excel.col_row_to_cell(self.grade_column, self.row) + '\'.')
-                raise Exception(invalid_grade_exception) from None
+                raise Exception(invalid_india_10_grade_exception) from None
             except ValueError:
                 invalid_india_10_letter_grade_exception = str('Converted input grade \''
                     + converted_number + '\' from original input grade \'' + self.given_grade
@@ -58,6 +58,7 @@ class Course:
                     + 'This usually means that the entry for \'' + self.scale_type
                     + '\' in \'data/india10.csv\' has a mistake in it.\n'
                     + 'Please report this on GitHub or via email.')
+                raise Exception(invalid_india_10_letter_grade_exception) from None
         else: # otherwise try to see if scale name is in conversion functions
             try:
                 ### AFRICA SECTION

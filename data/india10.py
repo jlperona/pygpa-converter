@@ -28,8 +28,8 @@ def parse_india_10_csv(india_10_dict):
         # non-header rows
         for row in csvreader:
             # create iterator over the list
-            row_it = iter(row)
             column_number = -1
+            row_it = iter(row)
 
             # get scale name
             column_number += 1
