@@ -73,6 +73,9 @@ The following grade scales have been implemented.
 * `Mexico`
     * 10 point scale with 6 as passing.
     * Grades range from 0 - 10.
+* `Peru`
+    * Most common scale in Peru.
+    * Grades range from 0 - 20.
 * `United States`
     * 4.0 scale used in the United States.
     * Also used in Brazil, Canada, China, Hong Kong, Japan, and Taiwan.

@@ -170,6 +170,28 @@ def convert_mexico(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Peru
+# number grades
+# grades range from 0 - 20
+def convert_peru(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 14 and grade <= 20:
+        return 'A'
+    elif grade >= 12 and grade < 14:
+        return 'B'
+    elif grade >= 11 and grade < 12:
+        return 'C'
+    elif grade >= 10 and grade < 11:
+        return 'D'
+    elif grade >= 0 and grade < 10:
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for United States
 # letter grades
 # only verifies validity of the input grade
