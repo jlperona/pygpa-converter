@@ -3,6 +3,8 @@ import pathlib
 from inspect import getsourcefile
 from os.path import abspath
 
+# parse through the india10.csv file in this directory
+# create a dictionary to serve as the scale
 def parse_india_10_csv(india_10_dict):
     # following is based in part on this StackOverflow post
     # https://stackoverflow.com/a/18489147
@@ -47,6 +49,7 @@ def parse_india_10_csv(india_10_dict):
                 # possible that there's more than one grade in this cell
                 all_grades_in_cell = cell.split(', ')
 
+                # add all grades along with value into the dictionary for this scale
                 for grade in all_grades_in_cell:
                     current_scale_dict[grade] = int(grade_key[column_number])
 

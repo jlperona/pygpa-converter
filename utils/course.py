@@ -38,76 +38,95 @@ class Course:
             raise Exception(invalid_units_exception) from None
 
     # convert given grade to United States letter grade using a conversion function
-    def convert_to_letter(self):
-        try:
+    def convert_to_letter(self, india_10_dict):
+        # first try to see if scale name is in the India 10 dictionary that was passed in
+        if self.scale_type in india_10_dict:
+            try:
+                converted_number = india_10_dict[self.scale_type][self.given_grade.upper()]
+                self.letter_grade = conversion.india.convert_india_10(converted_number)
+            except KeyError:
+                invalid_grade_exception = str('Invalid grade \'' + self.given_grade
+                    + '\' for scale type \'' + self.scale_type + '\' at cell \''
+                    + utils.excel.col_row_to_cell(self.grade_column, self.row) + '\'.')
+                raise Exception(invalid_grade_exception) from None
+            except ValueError:
+                invalid_india_10_letter_grade_exception = str('Converted input grade \''
+                    + converted_number + '\' from original input grade \'' + self.given_grade
+                    + '\' for grade scale \'' + self.scale_type + '\' at cell \''
+                    + utils.excel.col_row_to_cell(self.grade_column, self.row)
+                    + '\' caused an internal error.\n'
+                    + 'This usually means that the entry for \'' + self.scale_type
+                    + '\' in \'data/india10.csv\' has a mistake in it.\n'
+                    + 'Please report this on GitHub or via email.')
+        else: # otherwise try to see if scale name is in conversion functions
+            try:
+                ### AFRICA SECTION
 
-            ### AFRICA SECTION
+                if self.scale_type == 'Nigeria':
+                    self.letter_grade = conversion.africa.convert_nigeria(self.given_grade)
+                elif self.scale_type == 'South Africa':
+                    self.letter_grade = conversion.africa.convert_south_africa(self.given_grade)
+                elif self.scale_type == 'Uganda':
+                    self.letter_grade = conversion.africa.convert_uganda(self.given_grade)
 
-            if self.scale_type == 'Nigeria':
-                self.letter_grade = conversion.africa.convert_nigeria(self.given_grade)
-            elif self.scale_type == 'South Africa':
-                self.letter_grade = conversion.africa.convert_south_africa(self.given_grade)
-            elif self.scale_type == 'Uganda':
-                self.letter_grade = conversion.africa.convert_uganda(self.given_grade)
+                ### AMERICA SECTION
 
-            ### AMERICA SECTION
+                elif self.scale_type == '4':
+                    self.letter_grade_points = conversion.america.convert_4(self.given_grade)
+                    return
+                elif self.scale_type == 'Argentina':
+                    self.letter_grade = conversion.america.convert_argentina(self.given_grade)
+                elif self.scale_type == 'Brazil':
+                    self.letter_grade = conversion.america.convert_brazil(self.given_grade)
+                elif self.scale_type == 'Brazil Single':
+                    self.letter_grade = conversion.america.convert_brazil_single(self.given_grade)
+                elif self.scale_type == 'Brazil Double':
+                    self.letter_grade = conversion.america.convert_brazil_double(self.given_grade)
+                elif self.scale_type == 'Canada':
+                    self.letter_grade = conversion.america.convert_united_states(self.given_grade)
+                elif self.scale_type == 'Canada British Columbia':
+                    self.letter_grade = conversion.america.convert_canada_british_columbia(self.given_grade)
+                elif self.scale_type == 'Canada Ontario':
+                    self.letter_grade = conversion.america.convert_canada_ontario(self.given_grade)
+                elif self.scale_type == 'Mexico':
+                    self.letter_grade = conversion.america.convert_mexico(self.given_grade)
+                elif self.scale_type == 'Peru':
+                    self.letter_grade = conversion.america.convert_peru(self.given_grade)
+                elif self.scale_type == 'United States':
+                    self.letter_grade = conversion.america.convert_united_states(self.given_grade)
 
-            elif self.scale_type == '4':
-                self.letter_grade_points = conversion.america.convert_4(self.given_grade)
-                return
-            elif self.scale_type == 'Argentina':
-                self.letter_grade = conversion.america.convert_argentina(self.given_grade)
-            elif self.scale_type == 'Brazil':
-                self.letter_grade = conversion.america.convert_brazil(self.given_grade)
-            elif self.scale_type == 'Brazil Single':
-                self.letter_grade = conversion.america.convert_brazil_single(self.given_grade)
-            elif self.scale_type == 'Brazil Double':
-                self.letter_grade = conversion.america.convert_brazil_double(self.given_grade)
-            elif self.scale_type == 'Canada':
-                self.letter_grade = conversion.america.convert_united_states(self.given_grade)
-            elif self.scale_type == 'Canada British Columbia':
-                self.letter_grade = conversion.america.convert_canada_british_columbia(self.given_grade)
-            elif self.scale_type == 'Canada Ontario':
-                self.letter_grade = conversion.america.convert_canada_ontario(self.given_grade)
-            elif self.scale_type == 'Mexico':
-                self.letter_grade = conversion.america.convert_mexico(self.given_grade)
-            elif self.scale_type == 'Peru':
-                self.letter_grade = conversion.america.convert_peru(self.given_grade)
-            elif self.scale_type == 'United States':
-                self.letter_grade = conversion.america.convert_united_states(self.given_grade)
+                ### ASIA SECTION
 
-            ### ASIA SECTION
+                elif self.scale_type == 'Bangladesh':
+                    self.letter_grade = conversion.asia.convert_bangladesh(self.given_grade)
+                elif self.scale_type == 'China':
+                    self.letter_grade = conversion.asia.convert_china(self.given_grade)
+                elif self.scale_type == 'China Modified':
+                    self.letter_grade_points = conversion.asia.convert_china_modified(self.given_grade)
+                    return
+                elif self.scale_type == 'Taiwan':
+                    self.letter_grade = conversion.asia.convert_taiwan(self.given_grade)
 
-            elif self.scale_type == 'Bangladesh':
-                self.letter_grade = conversion.asia.convert_bangladesh(self.given_grade)
-            elif self.scale_type == 'China':
-                self.letter_grade = conversion.asia.convert_china(self.given_grade)
-            elif self.scale_type == 'China Modified':
-                self.letter_grade_points = conversion.asia.convert_china_modified(self.given_grade)
-                return
-            elif self.scale_type == 'Taiwan':
-                self.letter_grade = conversion.asia.convert_taiwan(self.given_grade)
+                ### INDIA SECTION
 
-            ### INDIA SECTION
+                elif self.scale_type == 'India 10':
+                    self.letter_grade = conversion.india.convert_india_10(self.given_grade)
+                elif self.scale_type == 'India 100':
+                    self.letter_grade = conversion.india.convert_india_100(self.given_grade)
+                elif self.scale_type == 'India Marks':
+                    self.letter_grade = conversion.india.convert_india_marks(self.given_grade, self.units)
 
-            elif self.scale_type == 'India 10':
-                self.letter_grade = conversion.india.convert_india_10(self.given_grade)
-            elif self.scale_type == 'India 100':
-                self.letter_grade = conversion.india.convert_india_100(self.given_grade)
-            elif self.scale_type == 'India Marks':
-                self.letter_grade = conversion.india.convert_india_marks(self.given_grade, self.units)
+                ### INVALID SECTION
 
-            ### INVALID SECTION
-
-            else: # no such grade scale exists
-                invalid_grade_scale_exception = str('Invalid grade scale \'' + self.scale_type
-                    + '\' at cell \'C' + str(self.row) + '\'.')
-                raise Exception(invalid_grade_scale_exception)
-        except ValueError: # conversion function raised invalid input
-            invalid_grade_exception = str('Invalid grade \'' + self.given_grade
-                + '\' for scale type \'' + self.scale_type + '\' at cell \''
-                + utils.excel.col_row_to_cell(self.grade_column, self.row) + '\'.')
-            raise Exception(invalid_grade_exception) from None
+                else: # no such grade scale exists
+                    invalid_grade_scale_exception = str('Invalid grade scale \'' + self.scale_type
+                        + '\' at cell \'C' + str(self.row) + '\'.')
+                    raise Exception(invalid_grade_scale_exception)
+            except ValueError: # conversion function raised invalid input
+                invalid_grade_exception = str('Invalid grade \'' + self.given_grade
+                    + '\' for scale type \'' + self.scale_type + '\' at cell \''
+                    + utils.excel.col_row_to_cell(self.grade_column, self.row) + '\'.')
+                raise Exception(invalid_grade_exception) from None
 
         # convert United States letter grade to grade points
         try:

@@ -132,12 +132,13 @@ The following grade scales have been implemented.
 
 ### Indian 10 Point Scale
 
-The Indian 10 point scale (`India 10` above) is somewhat unique, in that many universities use the 10 point scale, but add their own letter grades.
+The Indian 10 point scale (`India 10` above) is somewhat unique, in that many universities use the 10 point scale, but add their own letter grade values.
 Typing in letter grades is easier than doing the conversion manually, so there are grade scales that support each university's specific letter grades.
+See the file `data/india10.csv` for all the universities that are supported.
 
-The file `data/india10.csv` contains the translations from letter grades to the 10 point scale for universities that I've encountered.
-Eventually, the program will be updated to use the grade scales from this file.
-For right now, use the `India 10` scale above.
+That CSV file contains the translations from letter grades to the 10 point scale for universities that I've encountered.
+`india10.py` in the same directory builds a dictionary of dictionaries for each grade scale on every row of that file.
+Adding new universities is as simple as adding a new line to the CSV file.
 
 ## Motivation
 
@@ -146,7 +147,7 @@ For right now, use the `India 10` scale above.
 Originally I wrote [this script in C++](https://github.com/jlperona/gpa-converter).
 I didn't know Python very well at the time, but I knew C++.
 That program was *okay*, but it wasn't great.
-The base of the program worked just fine, but eventually I decided I wanted to implement overlay scales for the `India 10` grade scale (under construction).
+The base of the program worked just fine, but eventually I decided I wanted to implement overlay scales for the `India 10` grade scale (see the section above).
 This would have taken a significant amount of work to do in C++, but is fairly easy in Python.
 As with any rewrite, eventually I "bit the bullet" and decided to go forward with the rewrite.
 
@@ -195,7 +196,9 @@ If you have any that you would like to add, feel free to make a [pull request](h
 
 ### Adding a New Scale
 
-If you would like to see a clean example of how to add a new grade scale, see the following example commits:
+#### Regular Scales
+
+For examples of commits that add regular grade scales (ones that use a normal conversion function), see the following examples:
 
 * [*Brazil Single*](https://github.com/jlperona/pygpa-converter/commit/6711dc104f185cc03e64ba18f131062bf6e34245) for letter grade scales
 * [*Canada British Columbia*](https://github.com/jlperona/pygpa-converter/commit/fe1728b14789527e5da4c834c18670a55f184460) for number grade scales
@@ -208,3 +211,17 @@ Below are the steps to add a new scale:
     * Copying the style of other functions is encouraged.
 2. Update `convert_to_letter()` in the `Course` class to add the new scale.
 3. Update **README.md** (this document) to list the new scale.
+
+#### India 10 Overlays
+
+For an example of a commit that adds an overlay scale for `India 10`, see the commit for *TBA*.
+
+Below are the steps to add a new `India 10` overlay scale:
+
+1. Add a new row to `data/india10.csv`.
+2. In the first column, add the university name.
+3. For each grade to add:
+    1. Find the column with the corresponding number grade.
+        * If the column does not exist, insert a new column with the first row being the number grade.
+    2. Add the grade to that column in the same row.
+    3. If a grade already exists there, separate them with a comma and a space ", ".

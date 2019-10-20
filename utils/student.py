@@ -23,9 +23,9 @@ class Student:
         self.courses.append(course)
 
     # convert all courses in the student's list to United States equivalent
-    def convert_classes(self):
+    def convert_classes(self, india_10_dict):
         for current_course in self.courses:
-            current_course.convert_to_letter()
+            current_course.convert_to_letter(india_10_dict)
 
     # calculate final gpa from converted courses
     def calculate_gpa(self):
