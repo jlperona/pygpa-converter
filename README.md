@@ -109,6 +109,10 @@ The following grade scales have been implemented.
 * `China Modified`
     * The Chinese conversion scale has been modified to use the one in use at UC Davis.
     * Grades range from 0 - 100.
+* `Hong Kong`
+    * Alias of `United States`.
+    * See `United States` above for more information.
+    * Letter grades.
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.

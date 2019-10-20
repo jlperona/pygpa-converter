@@ -1,3 +1,5 @@
+import conversion.america
+
 # conversion function for Bangladesh
 # number grades
 # grades range from 0 - 100
@@ -64,6 +66,12 @@ def convert_china_modified(input):
     # truncate to do easy math
     truncated_grade = int(grade)
     return (truncated_grade / 10.0) - 5.1
+
+# conversion function for Hong Kong
+# alias of United States
+# single letter grades
+def convert_hong_kong(input):
+    return conversion.america.convert_united_states(input)
 
 # conversion function for Taiwan
 # number grades

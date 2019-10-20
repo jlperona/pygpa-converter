@@ -59,22 +59,10 @@ def convert_brazil(input):
         raise ValueError
 
 # conversion function for Brazil single letter grades
+# alias of United States
 # single letter grades
 def convert_brazil_single(input):
-    grade = input.upper()
-
-    if grade == 'A':
-        return 'A'
-    elif grade == 'B':
-        return 'B'
-    elif grade == 'C':
-        return 'C'
-    elif grade == 'D':
-        return 'D'
-    elif grade == 'F':
-        return 'F'
-    else: # invalid
-        raise ValueError
+    return convert_united_states(input)
 
 # conversion function for Brazil double letter grades
 # double letter grades
@@ -91,6 +79,12 @@ def convert_brazil_double(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for Canada
+# alias of United States
+# letter grades
+def convert_canada(input):
+    return convert_united_states(input)
 
 # conversion function for British Columbia, Canada
 # number grades

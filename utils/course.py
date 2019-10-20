@@ -84,7 +84,7 @@ class Course:
                 elif self.scale_type == 'Brazil Double':
                     self.letter_grade = conversion.america.convert_brazil_double(self.given_grade)
                 elif self.scale_type == 'Canada':
-                    self.letter_grade = conversion.america.convert_united_states(self.given_grade)
+                    self.letter_grade = conversion.america.convert_canada(self.given_grade)
                 elif self.scale_type == 'Canada British Columbia':
                     self.letter_grade = conversion.america.convert_canada_british_columbia(self.given_grade)
                 elif self.scale_type == 'Canada Ontario':
@@ -105,6 +105,8 @@ class Course:
                 elif self.scale_type == 'China Modified':
                     self.letter_grade_points = conversion.asia.convert_china_modified(self.given_grade)
                     return
+                elif self.scale_type == 'Hong Kong':
+                    self.letter_grade = conversion.asia.convert_hong_kong(self.given_grade)
                 elif self.scale_type == 'Taiwan':
                     self.letter_grade = conversion.asia.convert_taiwan(self.given_grade)
 
