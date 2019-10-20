@@ -51,6 +51,9 @@ The following grade scales have been implemented.
         * Assumes that A+ is equivalent to 4.0.
         * Can also convert the 4.3 scale where A+ is equivalent to 4.3.
     * Numerical grades. For letter grades, see `United States` below.
+* `Argentina`
+    * Most common grade scale in Argentina.
+    * Grades range from 0 - 10.
 * `Brazil`
     * Most common grade scale in Brazil.
     * Grades range from 0 - 100.

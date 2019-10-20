@@ -1,8 +1,11 @@
+# non-country function imports
+import conversion.core
+import utils.excel
+
+# country function imports
 import conversion.america
 import conversion.asia
 import conversion.india
-
-import utils.excel
 
 # representation of a course defined via each line of the input csv file
 # also contains helper functions to convert the course to the United States grade scale
@@ -87,17 +90,18 @@ class Course:
                     + '\' at cell \'C' + str(self.row) + '\'.')
                 raise Exception(invalid_grade_scale_exception)
         except ValueError: # conversion function raised invalid input
-            invalid_grade_exception = str('Invalid grade \'' + self.given_grade + '\' for scale type \'' + self.scale_type
-                + '\' at cell \'' + utils.excel.col_row_to_cell(self.grade_column, self.row) + '\'.')
+            invalid_grade_exception = str('Invalid grade \'' + self.given_grade
+                + '\' for scale type \'' + self.scale_type + '\' at cell \''
+                + utils.excel.col_row_to_cell(self.grade_column, self.row) + '\'.')
             raise Exception(invalid_grade_exception) from None
 
         # convert United States letter grade to grade points
         try:
-            self.letter_grade_points = float(conversion.america.convert_letter_to_4(self.letter_grade))
+            self.letter_grade_points = float(conversion.core.convert_letter_to_4(self.letter_grade))
         # if this fails then there's a problem with the relevant conversion function
         except ValueError:
-            invalid_us_letter_grade_exception = str('Converted input grade \'' + self.letter_grade
-                + '\' from original input grade \'' + self.given_grade
+            invalid_us_letter_grade_exception = str('Converted input grade \''
+                + self.letter_grade + '\' from original input grade \'' + self.given_grade
                 + '\' for grade scale \'' + self.scale_type + '\' at cell \''
                 + utils.excel.col_row_to_cell(self.grade_column, self.row)
                 + '\' caused an internal error.\n'
