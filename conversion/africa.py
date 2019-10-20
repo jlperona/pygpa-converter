@@ -39,3 +39,27 @@ def convert_south_africa(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for Uganda
+# number grades
+# grades range from 1 - 9
+def convert_uganda(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade == 9:
+        return 'F'
+    elif grade >= 8 and grade < 9:
+        return 'C'
+    elif grade >= 7 and grade < 8:
+        return 'C'
+    elif grade >= 5 and grade < 7:
+        return 'B'
+    elif grade >= 3 and grade < 5:
+        return 'B'
+    elif grade >= 1 and grade < 3:
+        return 'A'
+    else: # invalid
+        raise ValueError

@@ -51,6 +51,9 @@ The following grade scales have been implemented.
 * `South Africa`
     * Most common scale in South Africa.
     * Grades range from 0 - 100.
+* `Uganda`
+    * 9 point scale in Uganda.
+    * Grades range from 1 - 9.
 
 ### America
 
