@@ -1,3 +1,27 @@
+# conversion function for Bangladesh
+# number grades
+# grades range from 0 - 100
+def convert_bangladesh(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 60 and grade <= 100:
+        return 'A'
+    elif grade >= 55 and grade < 60:
+        return 'B+'
+    elif grade >= 50 and grade < 55:
+        return 'B'
+    elif grade >= 43 and grade < 50:
+        return 'C+'
+    elif grade >= 35 and grade < 43:
+        return 'C'
+    elif grade >= 0 and grade < 35:
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for China
 # number grades
 # grades range from 0 - 100

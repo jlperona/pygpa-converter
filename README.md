@@ -100,6 +100,9 @@ The following grade scales have been implemented.
 
 ### Asia (excluding India)
 
+* `Bangladesh`
+    * Most common scale in Bangladesh.
+    * Grades range from 0 - 100.
 * `China`
     * Most common scale in China.
     * Grades range from 0 - 100.
