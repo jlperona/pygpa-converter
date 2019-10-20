@@ -54,6 +54,8 @@ class Course:
                 self.letter_grade = america.convert_canada_british_columbia(self.given_grade)
             elif self.scale_type == 'Canada Ontario':
                 self.letter_grade = america.convert_canada_ontario(self.given_grade)
+            elif self.scale_type == 'Mexico':
+                self.letter_grade = america.convert_mexico(self.given_grade)
             elif self.scale_type == 'United States' or self.scale_type == 'Canada':
                 self.letter_grade = america.convert_united_states(self.given_grade)
 

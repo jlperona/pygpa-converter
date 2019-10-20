@@ -150,6 +150,26 @@ def convert_canada_ontario(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Mexico
+# number grades
+# grades range from 0 - 10
+def convert_mexico(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 9 and grade <= 10:
+        return 'A'
+    elif grade >= 8 and grade < 9:
+        return 'B'
+    elif grade >= 6 and grade < 8:
+        return 'C'
+    elif grade >= 0 and grade < 6:
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for United States
 # letter grades
 # only verifies validity of the input grade

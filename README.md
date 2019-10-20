@@ -70,6 +70,9 @@ The following grade scales have been implemented.
 * `Canada Ontario`
     * Most common scale in Ontario, Canada.
     * Grades range from 0 - 100.
+* `Mexico`
+    * 10 point scale with 6 as passing.
+    * Grades range from 0 - 10.
 * `United States`
     * 4.0 scale used in the United States.
     * Also used in Brazil, Canada, China, Hong Kong, Japan, and Taiwan.
