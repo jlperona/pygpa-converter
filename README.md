@@ -140,6 +140,12 @@ The following grade scales have been implemented.
         * For example, 200 units with a grade of 150 is equal to 150/200 = 75%.
     * Grades range from 0 to the number of units input.
 
+### Oceania
+
+* `Australia`
+    * Post-secondary scale in Australia.
+    * Letter grades.
+
 ### Indian 10 Point Scale
 
 The Indian 10 point scale (`India 10` above) is somewhat unique, in that many universities use the 10 point scale, but add their own letter grade values.

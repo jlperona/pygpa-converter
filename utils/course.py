@@ -7,6 +7,7 @@ import conversion.africa
 import conversion.america
 import conversion.asia
 import conversion.india
+import conversion.oceania
 
 # representation of a course defined via each line of the input csv file
 # also contains helper functions to convert the course to the United States grade scale
@@ -122,6 +123,11 @@ class Course:
                     self.letter_grade = conversion.india.convert_india_100(self.given_grade)
                 elif self.scale_type == 'India Marks':
                     self.letter_grade = conversion.india.convert_india_marks(self.given_grade, self.units)
+
+                ### OCEANIA SECTION
+
+                elif self.scale_type == 'Australia':
+                    self.letter_grade = conversion.oceania.convert_australia(self.given_grade)
 
                 ### INVALID SECTION
 
