@@ -116,6 +116,9 @@ The following grade scales have been implemented.
 * `Iran`
     * Most common scale in Iran.
     * Grades range from 0 - 20.
+* `Japan`
+    * Number grades in Japan.
+    * Grades range from 0 - 100.
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.
