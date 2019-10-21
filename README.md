@@ -113,6 +113,9 @@ The following grade scales have been implemented.
     * Alias of `United States`.
     * See `United States` above for more information.
     * Letter grades.
+* `Iran`
+    * Most common scale in Iran.
+    * Grades range from 0 - 20.
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.
