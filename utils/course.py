@@ -128,6 +128,8 @@ class Course:
 
                 elif self.scale_type == 'Australia':
                     self.letter_grade = conversion.oceania.convert_australia(self.given_grade)
+                elif self.scale_type == 'Australia New South Wales':
+                    self.letter_grade = conversion.oceania.convert_australia_new_south_wales(self.given_grade)
 
                 ### INVALID SECTION
 

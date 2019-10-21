@@ -145,6 +145,10 @@ The following grade scales have been implemented.
 * `Australia`
     * Post-secondary scale in Australia.
     * Letter grades.
+* `Australia New South Wales`
+    * Most common scale in New South Wales, Australia.
+    * Grades range from 0 - 100.
+    * For letter grades, use `Australia` above.
 
 ### Indian 10 Point Scale
 

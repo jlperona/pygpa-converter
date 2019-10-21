@@ -19,3 +19,25 @@ def convert_australia(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for New South Wales, Australia
+# number grades
+# grades range from 0 - 100
+def convert_australia_new_south_wales(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 85 and grade <= 100:
+        return 'A+'
+    elif grade >= 75 and grade < 85:
+        return 'A'
+    elif grade >= 65 and grade < 75:
+        return 'B'
+    elif grade >= 50 and grade < 65:
+        return 'C'
+    elif grade >= 0 and grade < 50:
+        return 'F'
+    else: # invalid
+        raise ValueError
