@@ -6,6 +6,7 @@ import utils.excel
 import conversion.africa
 import conversion.america
 import conversion.asia
+import conversion.europe
 import conversion.india
 import conversion.oceania
 
@@ -114,6 +115,11 @@ class Course:
                     self.letter_grade = conversion.asia.convert_japan(self.given_grade)
                 elif self.scale_type == 'Taiwan':
                     self.letter_grade = conversion.asia.convert_taiwan(self.given_grade)
+
+                ### EUROPE SECTION
+
+                elif self.scale_type == 'Austria':
+                    self.letter_grade = conversion.europe.convert_austria(self.given_grade)
 
                 ### INDIA SECTION
 

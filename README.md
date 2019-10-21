@@ -123,6 +123,12 @@ The following grade scales have been implemented.
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.
 
+### Europe
+
+* `Austria`
+    * Most common scale in Austria.
+    * Grades range from 1 - 5.
+
 ### India
 
 * `India 10`
