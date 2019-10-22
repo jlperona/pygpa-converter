@@ -119,6 +119,28 @@ def convert_japan(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Nepal
+# number grades
+# grades range from 0 - 100
+def convert_nepal(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 80 and grade <= 100:
+        return 'A+'
+    elif grade >= 60 and grade < 80:
+        return 'A'
+    elif grade >= 46 and grade < 60:
+        return 'B'
+    elif grade >= 32 and grade < 46:
+        return 'C'
+    elif grade >= 0 and grade < 32:
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for Taiwan
 # number grades
 # grades range from 0 - 100

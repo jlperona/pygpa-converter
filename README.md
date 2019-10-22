@@ -119,6 +119,9 @@ The following grade scales have been implemented.
 * `Japan`
     * Number grades in Japan.
     * Grades range from 0 - 100.
+* `Nepal`
+  * Most common scale in Nepal.
+  * Grades range from 0 - 100.
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.
