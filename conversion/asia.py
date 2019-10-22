@@ -141,6 +141,21 @@ def convert_nepal(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Nepalese universities that only report marks
+# number grades
+# grades range from 0 - number of marks
+def convert_nepal_marks(input, marks):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade < 0 or grade > marks:
+        raise ValueError
+
+    scaled_grade = grade * 100.0 / marks
+    return convert_nepal(scaled_grade)
+
 # conversion function for Taiwan
 # number grades
 # grades range from 0 - 100

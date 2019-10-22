@@ -122,6 +122,13 @@ The following grade scales have been implemented.
 * `Nepal`
   * Most common scale in Nepal.
   * Grades range from 0 - 100.
+* `Nepal Marks`
+    * Scale for certain universities in Nepal.
+        * Useful when the university only uses marks and does not provide an equivalent to units.
+        * Uses the same scale as `Nepal`.
+        * Calculates the percentage based on the units input being equal to 100%.
+        * For example, 200 units with a grade of 150 is equal to 150/200 = 75%.
+    * Grades range from 0 to the number of marks input.
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.
@@ -147,7 +154,7 @@ The following grade scales have been implemented.
         * Uses the same scale as `India 100`.
         * Calculates the percentage based on the units input being equal to 100%.
         * For example, 200 units with a grade of 150 is equal to 150/200 = 75%.
-    * Grades range from 0 to the number of units input.
+    * Grades range from 0 to the number of marks input.
 
 ### Oceania
 
