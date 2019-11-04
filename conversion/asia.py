@@ -232,6 +232,44 @@ def convert_saudi_arabia(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Singapore
+# letter grades
+def convert_singapore(input):
+    grade = input.upper()
+
+    if grade == 'A+' or grade == 'AD':
+        return 'A+'
+    elif grade == 'A':
+        return 'A'
+    elif grade == 'A-':
+        return 'A-'
+    elif grade == 'B+':
+        return 'B+'
+    elif grade == 'B':
+        return 'B'
+    # Scholaro doesn't have this grade listed on their website
+    # however, National University of Singapore uses it
+    elif grade == 'B-':
+        return 'B-'
+    elif grade == 'C+':
+        return 'C+'
+    elif grade == 'C':
+        return 'C'
+    elif grade == 'C-':
+        return 'C-'
+    elif grade == 'D+':
+        return 'D+'
+    elif grade == 'D':
+        return 'D'
+    # Scholaro doesn't have this grade listed on their website
+    # however, National University of Singapore uses it
+    elif grade == 'D-':
+        return 'D-'
+    elif grade == 'F':
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for Taiwan
 # number grades
 # grades range from 0 - 100

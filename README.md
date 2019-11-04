@@ -139,6 +139,9 @@ The following grade scales have been implemented.
 * `Saudi Arabia`
     * University-level scale in Saudi Arabia.
     * Letter grades.
+* `Singapore`
+    * Most common scale in Singapore.
+    * Letter grades.
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.
