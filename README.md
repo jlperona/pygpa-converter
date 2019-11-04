@@ -142,6 +142,9 @@ The following grade scales have been implemented.
 * `Singapore`
     * Most common scale in Singapore.
     * Letter grades.
+* `South Korea`
+    * Post-secondary scale in South Korea.
+    * Letter grades.
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.

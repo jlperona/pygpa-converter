@@ -270,6 +270,40 @@ def convert_singapore(input):
     else: # invalid
         raise ValueError
 
+# conversion function for South Korea
+# letter grades
+def convert_south_korea(input):
+    grade = input.upper()
+
+    if grade == 'A+':
+        return 'A+'
+    elif grade == 'A' or grade == 'A0' or grade == 'AO':
+        return 'A'
+    elif grade == 'A-':
+        return 'A-'
+    elif grade == 'B+':
+        return 'B+'
+    elif grade == 'B' or grade == 'B0' or grade == 'BO':
+        return 'B'
+    elif grade == 'B-':
+        return 'B-'
+    elif grade == 'C+':
+        return 'C+'
+    elif grade == 'C' or grade == 'C0' or grade == 'CO':
+        return 'C'
+    elif grade == 'C-':
+        return 'C-'
+    elif grade == 'D+':
+        return 'D+'
+    elif grade == 'D' or grade == 'D0' or grade == 'DO':
+        return 'D'
+    elif grade == 'D-':
+        return 'D-'
+    elif grade == 'F':
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for Taiwan
 # number grades
 # grades range from 0 - 100
