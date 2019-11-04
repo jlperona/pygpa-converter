@@ -132,6 +132,10 @@ The following grade scales have been implemented.
 * `Philippines`
     * Most common scale in the Philippines.
     * Grades range from 1 - 5.
+* `Russia`
+    * Most common scale in Russia.
+    * Letter grades.
+    * Either the full translated grade (`Excellent`, etc.) or the first letter of the translated grade (`E`, etc.) is accepted.
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.

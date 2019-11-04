@@ -190,6 +190,21 @@ def convert_philippines(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Russia
+# letter grades
+def convert_russia(input):
+    grade = input.upper()
+
+    if grade == 'EXCELLENT' or grade == 'E':
+        return 'A'
+    elif grade == 'GOOD' or grade == 'G':
+        return 'B'
+    elif grade == 'SATISFACTORY' or grade == 'S':
+        return 'C'
+    elif grade == 'UNSATISFACTORY' or grade == 'U':
+        return 'F'
+    else: # invalid
+        raise ValueError
 
 # conversion function for Taiwan
 # number grades

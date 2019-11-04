@@ -119,6 +119,8 @@ class Course:
                     self.letter_grade = conversion.asia.convert_nepal_marks(self.given_grade, self.units)
                 elif self.scale_type == 'Philippines':
                     self.letter_grade = conversion.asia.convert_philippines(self.given_grade)
+                elif self.scale_type == 'Russia':
+                    self.letter_grade = conversion.asia.convert_russia(self.given_grade)
                 elif self.scale_type == 'Taiwan':
                     self.letter_grade = conversion.asia.convert_taiwan(self.given_grade)
 
