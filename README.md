@@ -129,6 +129,9 @@ The following grade scales have been implemented.
         * Calculates the percentage based on the units input being equal to 100%.
         * For example, 200 units with a grade of 150 is equal to 150/200 = 75%.
     * Grades range from 0 to the number of marks input.
+* `Philippines`
+    * Most common scale in the Philippines.
+    * Grades range from 1 - 5.
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.

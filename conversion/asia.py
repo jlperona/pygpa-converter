@@ -156,6 +156,41 @@ def convert_nepal_marks(input, marks):
     scaled_grade = grade * 100.0 / marks
     return convert_nepal(scaled_grade)
 
+# conversion function for the Philippines
+# number grades
+# grades range from 1 - 5
+def convert_philippines(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade == 5:
+        return 'F'
+    elif grade >= 4 and grade < 5:
+        return 'D'
+    elif grade >= 3 and grade < 4:
+        return 'C-'
+    elif grade >= 2.75 and grade < 3:
+        return 'C'
+    elif grade >= 2.5 and grade < 2.75:
+        return 'C+'
+    elif grade >= 2.25 and grade < 2.5:
+        return 'B-'
+    elif grade >= 2 and grade < 2.25:
+        return 'B'
+    elif grade >= 1.75 and grade < 2:
+        return 'B+'
+    elif grade >= 1.5 and grade < 1.75:
+        return 'A-'
+    elif grade >= 1.25 and grade < 1.5:
+        return 'A'
+    elif grade >= 1 and grade < 1.25:
+        return 'A+'
+    else: # invalid
+        raise ValueError
+
+
 # conversion function for Taiwan
 # number grades
 # grades range from 0 - 100
