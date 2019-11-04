@@ -148,6 +148,9 @@ The following grade scales have been implemented.
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.
+* `Vietnam`
+    * Most common scale in Vietnam.
+    * Grades range from 0 - 10.
 
 ### Europe
 

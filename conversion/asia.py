@@ -325,3 +325,30 @@ def convert_taiwan(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for Vietnam
+# number grades
+# grades range from 0 - 10
+def convert_vietnam(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 9 and grade <= 10:
+        return 'A+'
+    elif grade >= 8 and grade < 9:
+        return 'A'
+    elif grade >= 7 and grade < 8:
+        return 'B+'
+    elif grade >= 6 and grade < 7:
+        return 'B'
+    elif grade >= 5 and grade < 6:
+        return 'C'
+    # note that there's a carve-out for a D here, but exactly when this applies is unclear
+    # Scholaro says "with an overall average grade of at least 5.0"
+    # how this applies to one course is unclear, so assigning an F is safer
+    elif grade >= 0 and grade < 5:
+        return 'F'
+    else: # invalid
+        raise ValueError

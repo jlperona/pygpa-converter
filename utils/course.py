@@ -129,6 +129,8 @@ class Course:
                     self.letter_grade = conversion.asia.convert_south_korea(self.given_grade)
                 elif self.scale_type == 'Taiwan':
                     self.letter_grade = conversion.asia.convert_taiwan(self.given_grade)
+                elif self.scale_type == 'Vietnam':
+                    self.letter_grade = conversion.asia.convert_vietnam(self.given_grade)
 
                 ### EUROPE SECTION
 
