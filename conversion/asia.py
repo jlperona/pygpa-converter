@@ -206,6 +206,32 @@ def convert_russia(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Saudi Arabia
+# letter grades
+def convert_saudi_arabia(input):
+    grade = input.upper()
+
+    if grade == 'A+':
+        return 'A+'
+    elif grade == 'A':
+        return 'A'
+    elif grade == 'B+':
+        return 'A-'
+    elif grade == 'B':
+        return 'B+'
+    elif grade == 'C+':
+        return 'B'
+    elif grade == 'C':
+        return 'B-'
+    elif grade == 'D+':
+        return 'C+'
+    elif grade == 'D':
+        return 'C'
+    elif grade == 'F' or grade == 'NF' or grade == 'DN':
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for Taiwan
 # number grades
 # grades range from 0 - 100

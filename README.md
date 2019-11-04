@@ -136,6 +136,9 @@ The following grade scales have been implemented.
     * Most common scale in Russia.
     * Letter grades.
     * Either the full translated grade (`Excellent`, etc.) or the first letter of the translated grade (`E`, etc.) is accepted.
+* `Saudi Arabia`
+    * University-level scale in Saudi Arabia.
+    * Letter grades.
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.
