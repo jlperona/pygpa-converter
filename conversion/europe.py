@@ -96,6 +96,28 @@ def convert_denmark(input):
     else: # invalid
         raise ValueError
 
+# conversion function for the European Credit Transfer System
+# letter grades
+def convert_ects(input):
+    grade = input.upper()
+
+    # some of these grades were not in Scholaro's database
+    # there were taken from transcripts by the University of New South Wales
+    if grade == 'A':
+        return 'A'
+    elif grade == 'B':
+        return 'B+'
+    elif grade == 'C':
+        return 'B'
+    elif grade == 'D':
+        return 'C+'
+    elif grade == 'E':
+        return 'C'
+    elif grade == 'F' or grade == 'FX':
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for Germany
 # number grades
 # grades range from 1 - 6

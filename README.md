@@ -166,6 +166,9 @@ The following grade scales have been implemented.
 * `Denmark`
     * Most common scale in Denmark.
     * Grades range from 0 - 12 or -3.
+* `ECTS`
+    * European Credit Transfer System scale.
+    * Letter grades.
 * `Germany`
     * Tertiary scale in Germany.
     * Grades range from 1 - 6.
