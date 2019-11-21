@@ -157,6 +157,9 @@ The following grade scales have been implemented.
 * `Austria`
     * Most common scale in Austria.
     * Grades range from 1 - 5.
+* `Belgium`
+    * Flemish scale in Belgium.
+    * Grades range from 0 - 20.
 * `Germany`
     * Tertiary scale in Germany.
     * Grades range from 1 - 6.

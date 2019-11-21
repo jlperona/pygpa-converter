@@ -20,6 +20,34 @@ def convert_austria(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Belgium
+# number grades
+# grades range from 0 - 20
+def convert_belgium(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade == 20:
+        return 'A+'
+    elif grade >= 18 and grade < 20:
+        return 'A+'
+    elif grade >= 16 and grade < 18:
+        return 'A'
+    elif grade >= 14 and grade < 16:
+        return 'B'
+    elif grade >= 12 and grade < 14:
+        return 'C'
+    elif grade >= 10 and grade < 12:
+        return 'C-'
+    elif grade >= 8 and grade < 10:
+        return 'F'
+    elif grade >= 0 and grade < 8:
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for Germany
 # number grades
 # grades range from 1 - 6
