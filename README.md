@@ -169,6 +169,9 @@ The following grade scales have been implemented.
 * `ECTS`
     * European Credit Transfer System scale.
     * Letter grades.
+* `France`
+    * Most common scale in France.
+    * Grades range from 0 - 20.
 * `Germany`
     * Tertiary scale in Germany.
     * Grades range from 1 - 6.

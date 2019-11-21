@@ -144,6 +144,8 @@ class Course:
                     self.letter_grade = conversion.europe.convert_denmark(self.given_grade)
                 elif self.scale_type == 'ECTS':
                     self.letter_grade = conversion.europe.convert_ects(self.given_grade)
+                elif self.scale_type == 'France':
+                    self.letter_grade = conversion.europe.convert_france(self.given_grade)
                 elif self.scale_type == 'Germany':
                     self.letter_grade = conversion.europe.convert_germany(self.given_grade)
 
