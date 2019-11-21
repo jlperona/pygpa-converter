@@ -48,6 +48,28 @@ def convert_belgium(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Bulgaria
+# number grades
+# grades range from 2 - 6
+def convert_bulgaria(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade == 6:
+        return 'A'
+    elif grade >= 5 and grade < 6:
+        return 'A'
+    elif grade >= 4 and grade < 5:
+        return 'B'
+    elif grade >= 3 and grade < 4:
+        return 'C'
+    elif grade >= 2 and grade < 3:
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for Germany
 # number grades
 # grades range from 1 - 6

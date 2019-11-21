@@ -160,6 +160,9 @@ The following grade scales have been implemented.
 * `Belgium`
     * Flemish scale in Belgium.
     * Grades range from 0 - 20.
+* `Bulgaria`
+    * Most common scale in Bulgaria.
+    * Grades range from 2 - 6.
 * `Germany`
     * Tertiary scale in Germany.
     * Grades range from 1 - 6.

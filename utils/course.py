@@ -137,7 +137,9 @@ class Course:
                 elif self.scale_type == 'Austria':
                     self.letter_grade = conversion.europe.convert_austria(self.given_grade)
                 elif self.scale_type == 'Belgium':
-                    self.letter_grade = conversion.europe.convert_belgium(self.given_grade)                    
+                    self.letter_grade = conversion.europe.convert_belgium(self.given_grade)
+                elif self.scale_type == 'Bulgaria':
+                    self.letter_grade = conversion.europe.convert_bulgaria(self.given_grade)
                 elif self.scale_type == 'Germany':
                     self.letter_grade = conversion.europe.convert_germany(self.given_grade)
 
