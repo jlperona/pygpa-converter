@@ -163,6 +163,9 @@ The following grade scales have been implemented.
 * `Bulgaria`
     * Most common scale in Bulgaria.
     * Grades range from 2 - 6.
+* `Denmark`
+    * Most common scale in Denmark.
+    * Grades range from 0 - 12 or -3.
 * `Germany`
     * Tertiary scale in Germany.
     * Grades range from 1 - 6.
