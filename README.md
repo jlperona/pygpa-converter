@@ -203,6 +203,9 @@ The following grade scales have been implemented.
 * `Switzerland`
     * Most common scale in Switzerland.
     * Grades range from 0 - 6.
+* `United Kingdom`
+    * Most common scale in the United Kingdom.
+    * Grades range from 0 - 100.
 
 ### India
 
