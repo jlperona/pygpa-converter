@@ -345,3 +345,27 @@ def convert_sweden_5(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for Switzerland
+# number grades
+# grades range from 0 - 6
+def convert_switzerland(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade == 6:
+        return 'A'
+    elif grade >= 5.5 and grade < 6:
+        return 'A-'
+    elif grade >= 5 and grade < 5.5:
+        return 'B+'
+    elif grade >= 4.5 and grade < 5:
+        return 'B'
+    elif grade >= 4 and grade < 4.5:
+        return 'C'
+    elif grade >= 0 and grade < 4:
+        return 'F'
+    else: # invalid
+        raise ValueError

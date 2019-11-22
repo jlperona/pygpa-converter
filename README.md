@@ -200,6 +200,9 @@ The following grade scales have been implemented.
     * Five point scale in Sweden.
     * Grades range from 1 - 5.
     * For letter grades, use `Sweden` above.
+* `Switzerland`
+    * Most common scale in Switzerland.
+    * Grades range from 0 - 6.
 
 ### India
 
