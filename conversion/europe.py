@@ -185,3 +185,29 @@ def convert_greece(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for Ireland
+# number grades
+# grades range from 0 - 100
+def convert_ireland(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 70 and grade <= 100:
+        return 'A'
+    elif grade >= 65 and grade < 70:
+        return 'A-'
+    elif grade >= 60 and grade < 65:
+        return 'B+'
+    elif grade >= 50 and grade < 60:
+        return 'B'
+    elif grade >= 45 and grade < 50:
+        return 'B-'
+    elif grade >= 40 and grade < 45:
+        return 'C'
+    elif grade >= 0 and grade < 40:
+        return 'F'
+    else: # invalid
+        raise ValueError

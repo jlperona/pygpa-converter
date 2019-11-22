@@ -178,7 +178,10 @@ The following grade scales have been implemented.
 * `Greece`
     * Most common scale in Greece.
     * Grades range from 0 - 10.
-    
+* `Ireland`
+    * Most common scale in Ireland.
+    * Grades range from 0 - 100.
+
 ### India
 
 * `India 10`
