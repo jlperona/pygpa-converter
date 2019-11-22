@@ -181,6 +181,9 @@ The following grade scales have been implemented.
 * `Ireland`
     * Most common scale in Ireland.
     * Grades range from 0 - 100.
+* `Italy`
+    * Most common scale in Italy.
+    * Grades range from 0 - 30.
 
 ### India
 

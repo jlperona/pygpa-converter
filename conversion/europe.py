@@ -211,3 +211,27 @@ def convert_ireland(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for Italy
+# number grades
+# grades range from 0 - 30
+def convert_italy(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 29 and grade <= 30:
+        return 'A+'
+    elif grade >= 27 and grade < 29:
+        return 'A'
+    elif grade >= 24 and grade < 27:
+        return 'B'
+    elif grade >= 19 and grade < 24:
+        return 'C'
+    elif grade >= 18 and grade < 19:
+        return 'D'
+    elif grade >= 0 and grade < 18:
+        return 'F'
+    else: # invalid
+        raise ValueError
