@@ -101,8 +101,6 @@ def convert_denmark(input):
 def convert_ects(input):
     grade = input.upper()
 
-    # some of these grades were not in Scholaro's database
-    # there were taken from transcripts by the University of New South Wales
     if grade == 'A':
         return 'A'
     elif grade == 'B':

@@ -193,7 +193,7 @@ The following grade scales have been implemented.
 * `Spain`
     * Most common scale in Spain.
     * Grades range from 0 - 10.
-    
+
 ### India
 
 * `India 10`
