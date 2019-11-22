@@ -184,6 +184,9 @@ The following grade scales have been implemented.
 * `Italy`
     * Most common scale in Italy.
     * Grades range from 0 - 30.
+* `Netherlands`
+    * Most common scale in the Netherlands.
+    * Grades range from 1 - 10.
 
 ### India
 

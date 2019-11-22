@@ -235,3 +235,35 @@ def convert_italy(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for the Netherlands
+# number grades
+# grades range from 1 - 10
+def convert_netherlands(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 9.5 and grade <= 10:
+        return 'A+'
+    elif grade >= 8.5 and grade < 9.5:
+        return 'A+'
+    elif grade >= 7.5 and grade < 8.5:
+        return 'A'
+    elif grade >= 6.5 and grade < 7.5:
+        return 'B'
+    elif grade >= 6 and grade < 6.5:
+        return 'C'
+    elif grade >= 5.5 and grade < 6:
+        return 'D'
+    elif grade >= 4 and grade < 5.5:
+        return 'F'
+    elif grade >= 3 and grade < 4:
+        return 'F'
+    elif grade >= 2 and grade < 3:
+        return 'F'
+    elif grade >= 1 and grade < 2:
+        return 'F'
+    else: # invalid
+        raise ValueError
