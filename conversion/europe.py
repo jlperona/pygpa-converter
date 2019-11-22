@@ -325,3 +325,23 @@ def convert_sweden(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for the 5-point scale in Sweden
+# number grades
+# grades range from 1 - 5
+def convert_sweden_5(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade == 5:
+        return 'A'
+    elif grade >= 4 and grade < 5:
+        return 'A-'
+    elif grade >= 3 and grade < 4:
+        return 'B'
+    elif grade >= 1 and grade < 3:
+        return 'F'
+    else: # invalid
+        raise ValueError

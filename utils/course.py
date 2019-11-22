@@ -162,7 +162,9 @@ class Course:
                     self.letter_grade = conversion.europe.convert_spain(self.given_grade)
                 elif self.scale_type == 'Sweden':
                     self.letter_grade = conversion.europe.convert_sweden(self.given_grade)
-
+                elif self.scale_type == 'Sweden 5':
+                    self.letter_grade = conversion.europe.convert_sweden_5(self.given_grade)
+                    
                 ### INDIA SECTION
 
                 elif self.scale_type == 'India 10':
