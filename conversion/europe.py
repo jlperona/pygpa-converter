@@ -395,3 +395,45 @@ def convert_united_kingdom(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for the University of Glasgow, Scotland
+# letter grades
+def convert_university_of_glasgow(input):
+    grade = input.upper()
+
+    # see the following PDF provided by the University of Glasgow
+    # scale below is System 1 for the USA
+    # https://www.gla.ac.uk/media/media_489840_en.pdf
+
+    # note that the PDF says "don't use this to translate"
+    # I have not found a better source for these conversions, though
+
+    if grade == 'A1' or grade == 'A2':
+        return 'A+'
+    elif grade == 'A3' or grade == 'A4':
+        return 'A'
+    elif grade == 'A5':
+        return 'A-'
+    elif grade == 'B1':
+        return 'B+'
+    elif grade == 'B2':
+        return 'B'
+    elif grade == 'B3':
+        return 'B-'
+    elif grade == 'C1':
+        return 'C+'
+    elif grade == 'C2':
+        return 'C'
+    elif grade == 'C3':
+        return 'C-'
+    elif grade == 'D1':
+        return 'D+'
+    elif grade == 'D2':
+        return 'D'
+    elif grade == 'D3' or grade == 'E1':
+        return 'D-'
+    elif (grade == 'E2' or grade == 'E3' or grade == 'F1' or grade == 'F2' or
+          grade == 'F3' or grade == 'G1' or grade == 'G2'):
+        return 'F'
+    else: # invalid
+        raise ValueError
