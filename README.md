@@ -193,6 +193,9 @@ The following grade scales have been implemented.
 * `Spain`
     * Most common scale in Spain.
     * Grades range from 0 - 10.
+* `Sweden`
+    * Most common scale in Sweden.
+    * Letter grades.
 
 ### India
 

@@ -311,3 +311,17 @@ def convert_spain(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for Sweden
+# letter grades
+def convert_sweden(input):
+    grade = input.upper()
+
+    if grade == 'VG':
+        return 'A'
+    elif grade == 'G':
+        return 'B'
+    elif grade == 'U':
+        return 'F'
+    else: # invalid
+        raise ValueError
