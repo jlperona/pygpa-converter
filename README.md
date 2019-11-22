@@ -190,7 +190,10 @@ The following grade scales have been implemented.
 * `Romania`
     * Most common scale in Romania.
     * Grades range from 0 - 10.
-
+* `Spain`
+    * Most common scale in Spain.
+    * Grades range from 0 - 10.
+    
 ### India
 
 * `India 10`

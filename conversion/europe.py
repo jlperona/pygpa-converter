@@ -287,3 +287,29 @@ def convert_romania(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for Spain
+# number grades
+# grades range from 0 - 10
+def convert_spain(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade == 10:
+        return 'A+'
+    elif grade >= 9 and grade < 10:
+        return 'A'
+    elif grade >= 7 and grade < 9:
+        return 'B+'
+    elif grade >= 6 and grade < 7:
+        return 'B'
+    elif grade >= 5.5 and grade < 6:
+        return 'B-'
+    elif grade >= 5 and grade < 5.5:
+        return 'C'
+    elif grade >= 0 and grade < 5:
+        return 'F'
+    else: # invalid
+        raise ValueError
