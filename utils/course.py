@@ -156,6 +156,8 @@ class Course:
                     self.letter_grade = conversion.europe.convert_italy(self.given_grade)
                 elif self.scale_type == 'Netherlands':
                     self.letter_grade = conversion.europe.convert_netherlands(self.given_grade)
+                elif self.scale_type == 'Romania':
+                    self.letter_grade = conversion.europe.convert_romania(self.given_grade)
 
                 ### INDIA SECTION
 
