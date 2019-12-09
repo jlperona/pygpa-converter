@@ -113,6 +113,8 @@ class Course:
                     self.letter_grade = conversion.asia.convert_iran(self.given_grade)
                 elif self.scale_type == 'Japan':
                     self.letter_grade = conversion.asia.convert_japan(self.given_grade)
+                elif self.scale_type == 'Lebanon':
+                    self.letter_grade = conversion.asia.convert_lebanon(self.given_grade)
                 elif self.scale_type == 'Nepal':
                     self.letter_grade = conversion.asia.convert_nepal(self.given_grade)
                 elif self.scale_type == 'Nepal Marks':
@@ -170,7 +172,7 @@ class Course:
                     self.letter_grade = conversion.europe.convert_united_kingdom(self.given_grade)
                 elif self.scale_type == 'University of Glasgow':
                     self.letter_grade = conversion.europe.convert_university_of_glasgow(self.given_grade)
-                    
+
                 ### INDIA SECTION
 
                 elif self.scale_type == 'India 10':

@@ -119,9 +119,12 @@ The following grade scales have been implemented.
 * `Japan`
     * Number grades in Japan.
     * Grades range from 0 - 100.
+* `Lebanon`
+    * University scale in Lebanon.
+    * Grades range from 0 - 100.
 * `Nepal`
-  * Most common scale in Nepal.
-  * Grades range from 0 - 100.
+    * Most common scale in Nepal.
+    * Grades range from 0 - 100.
 * `Nepal Marks`
     * Scale for certain universities in Nepal.
         * Useful when the university only uses marks and does not provide an equivalent to units.
