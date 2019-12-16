@@ -116,6 +116,9 @@ The following grade scales have been implemented.
 * `Iran`
     * Most common scale in Iran.
     * Grades range from 0 - 20.
+* `Israel`
+    * Most common scale in Israel.
+    * Grades range from 0 - 100.
 * `Japan`
     * Number grades in Japan.
     * Grades range from 0 - 100.

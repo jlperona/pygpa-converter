@@ -111,6 +111,8 @@ class Course:
                     self.letter_grade = conversion.asia.convert_hong_kong(self.given_grade)
                 elif self.scale_type == 'Iran':
                     self.letter_grade = conversion.asia.convert_iran(self.given_grade)
+                elif self.scale_type == 'Israel':
+                    self.letter_grade = conversion.asia.convert_israel(self.given_grade)
                 elif self.scale_type == 'Japan':
                     self.letter_grade = conversion.asia.convert_japan(self.given_grade)
                 elif self.scale_type == 'Lebanon':

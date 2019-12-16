@@ -97,6 +97,32 @@ def convert_iran(input):
     else: # invalid
         raise ValueError
 
+# conversion function for Israel
+# number grades
+# grades range from 0 - 100
+def convert_israel(input):
+    try:
+        grade = float(input)
+    except ValueError: # invalid conversion
+        raise
+
+    if grade >= 95 and grade <= 100:
+        return 'A+'
+    elif grade >= 85 and grade < 95:
+        return 'A'
+    elif grade >= 75 and grade < 85:
+        return 'B'
+    elif grade >= 65 and grade < 75:
+        return 'C+'
+    elif grade >= 55 and grade < 65:
+        return 'C'
+    elif grade >= 45 and grade < 55:
+        return 'D'
+    elif grade >= 0 and grade < 45:
+        return 'F'
+    else: # invalid
+        raise ValueError
+
 # conversion function for Japan
 # number grades
 # grades range from 0 - 100
