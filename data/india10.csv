@@ -1,6 +1,7 @@
 University Name,10,9,8,7,6,5,4,3,2,1,0
 Anna,O,A+,A,B+,B,,,,,,"RA, SA"
 BITS Pilani,A,A-,B,B-,C,C-,D,,E,,
+Dayananda Sagar,S+,S,A,B,C,D,E,,,,
 GGSIPU,O,A+,A,B+,B,C,P,,,,F
 IIT Bombay,"AP, AA",AB,BB,BC,CC,CD,DD,,,,"EE, FF, FR, DX"
 IIT Delhi,A,A-,B,B-,C,C-,D,,E,,F
@@ -31,8 +32,9 @@ NIT Rourkela,Ex,A,B,C,D,P,,,F,,
 NIT Silchar,AA,AB,BB,BC,CC,CD,DD,,,,F
 NIT Tiruchirappali,S,A,B,C,D,R,,,,,F
 NIT Warangal,EX,A,B,C,D,P,,,,,
-PES,S,A,B,C,D,E,,,,,
+PES,S,A,B,C,,D,E,,,,F
 RIT,S,A,B,C,,D,E,,,,F
+RV,S,A,B,C,,D,E,,,,F
 Savitribai,O,A+,A,B+,B,C,P,,,,F
 SRM,O,A+,A,B+,B,C,P,,,,"F, Ab, I"
 Thapar,"A+, A",,B,,C,,D,,E,,F
