@@ -41,3 +41,35 @@ def convert_australia_new_south_wales(input):
         return 'F'
     else: # invalid
         raise ValueError
+
+# conversion function for New Zealand
+# letter grades
+def convert_new_zealand(input):
+    grade = input.upper()
+
+    if grade == 'A+':
+        return 'A+'
+    elif grade == 'A':
+        return 'A'
+    elif grade == 'A-':
+        return 'A-'
+    elif grade == 'B+':
+        return 'B+'
+    elif grade == 'B':
+        return 'B'
+    elif grade == 'B-':
+        return 'B-'
+    elif grade == 'C+':
+        return 'C+'
+    elif grade == 'C':
+        return 'C'
+    elif grade == 'C-':
+        return 'C-'
+    elif grade == 'D':
+        return 'F'
+    elif grade == 'E':
+        return 'F'
+    elif grade == 'F':
+        return 'F'
+    else: # invalid
+        raise ValueError

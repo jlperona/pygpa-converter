@@ -190,6 +190,8 @@ class Course:
                     self.letter_grade = conversion.oceania.convert_australia(self.given_grade)
                 elif self.scale_type == 'Australia New South Wales':
                     self.letter_grade = conversion.oceania.convert_australia_new_south_wales(self.given_grade)
+                elif self.scale_type == 'New Zealand':
+                    self.letter_grade = conversion.oceania.convert_new_zealand(self.given_grade)
 
                 ### INVALID SECTION
 
