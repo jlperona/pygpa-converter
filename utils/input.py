@@ -85,7 +85,7 @@ def parse_input(args: argparse.Namespace,
                 )
 
             # if no courses added, then no courses existed in the input
-            if len(current_student._courses) == 0:
+            if current_student.get_number_of_courses() == 0:
                 msg = str('No courses input for student ' + str(id_primary)
                           + ', row ' + str(line_number) + '.')
                 raise Exception(msg)
