@@ -1,12 +1,14 @@
 import conversion.america
 
-# conversion function for Bangladesh
-# number grades
-# grades range from 0 - 100
-def convert_bangladesh(input):
+
+def convert_bangladesh(input: str) -> str:
+    """Conversion function for Bangladesh.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 60 and grade <= 100:
@@ -21,16 +23,18 @@ def convert_bangladesh(input):
         return 'C'
     elif grade >= 0 and grade < 35:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for China
-# number grades
-# grades range from 0 - 100
-def convert_china(input):
+
+def convert_china(input: str) -> str:
+    """Conversion function for China.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 90 and grade <= 100:
@@ -43,16 +47,19 @@ def convert_china(input):
         return 'D'
     elif grade >= 0 and grade < 60:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for China, modified for the scale in use at UC Davis
-# number grades
-# grades range from 0 - 100
-def convert_china_modified(input):
+
+def convert_china_modified(input: str) -> float:
+    """Conversion function for China
+    The scale has been modified to match the one in use at UC Davis.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     # handle easy cases first
@@ -67,19 +74,23 @@ def convert_china_modified(input):
     truncated_grade = int(grade)
     return (truncated_grade / 10.0) - 5.1
 
-# conversion function for Hong Kong
-# alias of United States
-# single letter grades
-def convert_hong_kong(input):
+
+def convert_hong_kong(input: str) -> str:
+    """Conversion function for Hong Kong.
+    Alias of United States.
+    Single letter grades.
+    """
     return conversion.america.convert_united_states(input)
 
-# conversion function for Iran
-# number grades
-# grades range from 0 - 20
-def convert_iran(input):
+
+def convert_iran(input: str) -> str:
+    """Conversion function for Iran.
+    Number grades.
+    Grades range from 0 - 20.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 18 and grade <= 20:
@@ -94,16 +105,18 @@ def convert_iran(input):
         return 'D'
     elif grade >= 0 and grade < 10:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Israel
-# number grades
-# grades range from 0 - 100
-def convert_israel(input):
+
+def convert_israel(input: str) -> str:
+    """Conversion function for Israel.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 95 and grade <= 100:
@@ -120,16 +133,18 @@ def convert_israel(input):
         return 'D'
     elif grade >= 0 and grade < 45:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Japan
-# number grades
-# grades range from 0 - 100
-def convert_japan(input):
+
+def convert_japan(input: str) -> str:
+    """Conversion function for Japan.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 90 and grade <= 100:
@@ -142,16 +157,18 @@ def convert_japan(input):
         return 'C'
     elif grade >= 0 and grade < 60:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Lebanon
-# number grades
-# grades range from 0 - 100
-def convert_lebanon(input):
+
+def convert_lebanon(input: str) -> str:
+    """Conversion function for Lebanon.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 80 and grade <= 100:
@@ -166,16 +183,18 @@ def convert_lebanon(input):
         return 'D'
     elif grade >= 0 and grade < 40:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Nepal
-# number grades
-# grades range from 0 - 100
-def convert_nepal(input):
+
+def convert_nepal(input: str) -> str:
+    """Conversion function for Nepal.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 80 and grade <= 100:
@@ -188,31 +207,35 @@ def convert_nepal(input):
         return 'C'
     elif grade >= 0 and grade < 32:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Nepalese universities that only report marks
-# number grades
-# grades range from 0 - number of marks
-def convert_nepal_marks(input, marks):
+
+def convert_nepal_marks(input: str, marks: float) -> str:
+    """Conversion function for Nepalese universities that only report marks.
+    Number grades.
+    Grades range from 0 - number of marks.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade < 0 or grade > marks:
         raise ValueError
 
     scaled_grade = grade * 100.0 / marks
-    return convert_nepal(scaled_grade)
+    return convert_nepal(str(scaled_grade))
 
-# conversion function for the Philippines
-# number grades
-# grades range from 1 - 5
-def convert_philippines(input):
+
+def convert_philippines(input: str) -> str:
+    """Conversion function for the Philippines.
+    Number grades.
+    Grades range from 1 - 5.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade == 5:
@@ -237,12 +260,14 @@ def convert_philippines(input):
         return 'A'
     elif grade >= 1 and grade < 1.25:
         return 'A+'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Russia
-# letter grades
-def convert_russia(input):
+
+def convert_russia(input: str) -> str:
+    """Conversion function for Russia.
+    Letter grades.
+    """
     grade = input.upper()
 
     if grade == 'EXCELLENT' or grade == 'E':
@@ -253,12 +278,14 @@ def convert_russia(input):
         return 'C'
     elif grade == 'UNSATISFACTORY' or grade == 'U':
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Saudi Arabia
-# letter grades
-def convert_saudi_arabia(input):
+
+def convert_saudi_arabia(input: str) -> str:
+    """Conversion function for Saudi Arabia.
+    Letter grades.
+    """
     grade = input.upper()
 
     if grade == 'A+':
@@ -279,12 +306,14 @@ def convert_saudi_arabia(input):
         return 'C'
     elif grade == 'F' or grade == 'NF' or grade == 'DN':
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Singapore
-# letter grades
-def convert_singapore(input):
+
+def convert_singapore(input: str) -> str:
+    """Conversion function for Singapore.
+    Letter grades.
+    """
     grade = input.upper()
 
     if grade == 'A+' or grade == 'AD':
@@ -317,12 +346,14 @@ def convert_singapore(input):
         return 'D-'
     elif grade == 'F':
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for South Korea
-# letter grades
-def convert_south_korea(input):
+
+def convert_south_korea(input: str) -> str:
+    """Conversion function for South Korea.
+    Letter grades.
+    """
     grade = input.upper()
 
     if grade == 'A+':
@@ -351,16 +382,18 @@ def convert_south_korea(input):
         return 'D-'
     elif grade == 'F':
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Taiwan
-# number grades
-# grades range from 0 - 100
-def convert_taiwan(input):
+
+def convert_taiwan(input: str) -> str:
+    """Conversion function for Taiwan.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 90 and grade <= 100:
@@ -373,16 +406,18 @@ def convert_taiwan(input):
         return 'C'
     elif grade >= 0 and grade < 60:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Vietnam
-# number grades
-# grades range from 0 - 10
-def convert_vietnam(input):
+
+def convert_vietnam(input: str) -> str:
+    """Conversion function for Vietnam.
+    Number grades.
+    Grades range from 0 - 10.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 9 and grade <= 10:
@@ -395,10 +430,11 @@ def convert_vietnam(input):
         return 'B'
     elif grade >= 5 and grade < 6:
         return 'C'
-    # note that there's a carve-out for a D here, but exactly when this applies is unclear
+    # note that there's a carve-out for a D here
+    # but exactly when this applies is unclear
     # Scholaro says "with an overall average grade of at least 5.0"
     # how this applies to one course is unclear, so assigning an F is safer
     elif grade >= 0 and grade < 5:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError

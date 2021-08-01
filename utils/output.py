@@ -1,15 +1,21 @@
+# base imports
+import argparse
 import sys
 
+from typing import List
+
+# relative imports
 from utils.student import Student
 
-# write results to output file
-def write_output(args, all_students):
+
+def write_output(args: argparse.Namespace,
+                 all_students: List['Student']) -> None:
+    """Write results to output file."""
     # write output to file if defined
     if args.outfile:
         with open(args.outfile, 'w') as outfile:
             for current_student in all_students:
                 outfile.write(current_student.output_gpa())
-    # else write output to stdout
-    else:
+    else:  # else write output to stdout
         for current_student in all_students:
             sys.stdout.write(current_student.output_gpa())

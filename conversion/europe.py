@@ -1,10 +1,11 @@
-# conversion function for Austria
-# number grades
-# grades range from 1 - 5
-def convert_austria(input):
+def convert_austria(input: str) -> str:
+    """Conversion function for Austria.
+    Number grades.
+    Grades range from 1 - 5.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade == 5:
@@ -17,16 +18,18 @@ def convert_austria(input):
         return 'A-'
     elif grade >= 1 and grade < 2:
         return 'A'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Belgium
-# number grades
-# grades range from 0 - 20
-def convert_belgium(input):
+
+def convert_belgium(input: str) -> str:
+    """Conversion function for Belgium.
+    Number grades.
+    Grades range from 0 - 20.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade == 20:
@@ -45,16 +48,18 @@ def convert_belgium(input):
         return 'F'
     elif grade >= 0 and grade < 8:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Bulgaria
-# number grades
-# grades range from 2 - 6
-def convert_bulgaria(input):
+
+def convert_bulgaria(input: str) -> str:
+    """Cnversion function for Bulgaria.
+    Number grades.
+    Grades range from 2 - 6.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade == 6:
@@ -67,16 +72,18 @@ def convert_bulgaria(input):
         return 'C'
     elif grade >= 2 and grade < 3:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Denmark
-# number grades
-# grades range from 0 - 12 or -3
-def convert_denmark(input):
+
+def convert_denmark(input: str) -> str:
+    """Conversion function for Denmark.
+    Number grades.
+    Grades range from 0 - 12 or -3.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade == 12:
@@ -93,12 +100,14 @@ def convert_denmark(input):
         return 'F'
     elif grade == -3:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for the European Credit Transfer System
-# letter grades
-def convert_ects(input):
+
+def convert_ects(input: str) -> str:
+    """Conversion function for the European Credit Transfer System.
+    Letter grades.
+    """
     grade = input.upper()
 
     if grade == 'A':
@@ -113,18 +122,19 @@ def convert_ects(input):
         return 'C'
     elif grade == 'F' or grade == 'FX':
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for France
-# number grades
-# grades range from 0 - 20
-def convert_france(input):
+
+def convert_france(input: str) -> str:
+    """Conversion function for France.
+    Number grades.
+    Grades range from 0 - 20.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
-
     if grade >= 18 and grade <= 20:
         return 'A+'
     elif grade >= 16 and grade < 18:
@@ -139,16 +149,18 @@ def convert_france(input):
         return 'D'
     elif grade >= 0 and grade < 8:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Germany
-# number grades
-# grades range from 1 - 6
-def convert_germany(input):
+
+def convert_germany(input: str) -> str:
+    """Conversion function for Germany.
+    Number grades.
+    Grades range from 1 - 6.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade > 4 and grade <= 6:
@@ -161,16 +173,18 @@ def convert_germany(input):
         return 'A'
     elif grade >= 1 and grade <= 1.5:
         return 'A'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Greece
-# number grades
-# grades range from 0 - 10
-def convert_greece(input):
+
+def convert_greece(input: str) -> str:
+    """Conversion function for Greece.
+    Number grades.
+    Grades range from 0 - 10.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 8.5 and grade <= 10:
@@ -181,16 +195,18 @@ def convert_greece(input):
         return 'C'
     elif grade >= 0 and grade < 5:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Ireland
-# number grades
-# grades range from 0 - 100
-def convert_ireland(input):
+
+def convert_ireland(input: str) -> str:
+    """Conversion function for Ireland.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 70 and grade <= 100:
@@ -207,16 +223,18 @@ def convert_ireland(input):
         return 'C'
     elif grade >= 0 and grade < 40:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Italy
-# number grades
-# grades range from 0 - 30
-def convert_italy(input):
+
+def convert_italy(input: str) -> str:
+    """Conversion function for Italy.
+    Number grades.
+    Grades range from 0 - 30.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 29 and grade <= 30:
@@ -231,16 +249,18 @@ def convert_italy(input):
         return 'D'
     elif grade >= 0 and grade < 18:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for the Netherlands
-# number grades
-# grades range from 1 - 10
-def convert_netherlands(input):
+
+def convert_netherlands(input: str) -> str:
+    """Conversion function for the Netherlands.
+    Number grades.
+    Grades range from 1 - 10.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 9.5 and grade <= 10:
@@ -263,16 +283,18 @@ def convert_netherlands(input):
         return 'F'
     elif grade >= 1 and grade < 2:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Romania
-# number grades
-# grades range from 0 - 10
-def convert_romania(input):
+
+def convert_romania(input: str) -> str:
+    """Conversion function for Romania.
+    Number grades.
+    Grades range from 0 - 10.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 9 and grade <= 10:
@@ -283,16 +305,18 @@ def convert_romania(input):
         return 'C'
     elif grade >= 0 and grade < 5:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Spain
-# number grades
-# grades range from 0 - 10
-def convert_spain(input):
+
+def convert_spain(input: str) -> str:
+    """Conversion function for Spain.
+    Number grades.
+    Grades range from 0 - 10.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade == 10:
@@ -309,12 +333,14 @@ def convert_spain(input):
         return 'C'
     elif grade >= 0 and grade < 5:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Sweden
-# letter grades
-def convert_sweden(input):
+
+def convert_sweden(input: str) -> str:
+    """Conversion function for Sweden.
+    Letter grades.
+    """
     grade = input.upper()
 
     if grade == 'VG':
@@ -323,16 +349,18 @@ def convert_sweden(input):
         return 'B'
     elif grade == 'U':
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for the 5-point scale in Sweden
-# number grades
-# grades range from 1 - 5
-def convert_sweden_5(input):
+
+def convert_sweden_5(input: str) -> str:
+    """Conversion function for the 5-point scale in Sweden.
+    Number grades.
+    Grades range from 1 - 5.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade == 5:
@@ -343,16 +371,18 @@ def convert_sweden_5(input):
         return 'B'
     elif grade >= 1 and grade < 3:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Switzerland
-# number grades
-# grades range from 0 - 6
-def convert_switzerland(input):
+
+def convert_switzerland(input: str) -> str:
+    """Conversion function for Switzerland.
+    Number grades.
+    Grades range from 0 - 6.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade == 6:
@@ -367,16 +397,18 @@ def convert_switzerland(input):
         return 'C'
     elif grade >= 0 and grade < 4:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for the United Kingdom
-# number grades
-# grades range from 0 - 100
-def convert_united_kingdom(input):
+
+def convert_united_kingdom(input: str) -> str:
+    """Conversion function for the United Kingdom.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 70 and grade <= 100:
@@ -393,20 +425,22 @@ def convert_united_kingdom(input):
         return 'C'
     elif grade >= 0 and grade < 40:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for the University of Glasgow, Scotland
-# letter grades
-def convert_university_of_glasgow(input):
+
+def convert_university_of_glasgow(input: str) -> str:
+    """Conversion function for the University of Glasgow, Scotland.
+    Letter grades.
+
+    See the following PDF provided by the University of Glasgow.
+    Scale below is System 1 for the USA:
+    https://www.gla.ac.uk/media/media_489840_en.pdf
+
+    Note that the PDF says "don't use this to translate."
+    I have not found a better source for these conversions, though.
+    """
     grade = input.upper()
-
-    # see the following PDF provided by the University of Glasgow
-    # scale below is System 1 for the USA
-    # https://www.gla.ac.uk/media/media_489840_en.pdf
-
-    # note that the PDF says "don't use this to translate"
-    # I have not found a better source for these conversions, though
 
     if grade == 'A1' or grade == 'A2':
         return 'A+'
@@ -432,8 +466,8 @@ def convert_university_of_glasgow(input):
         return 'D'
     elif grade == 'D3' or grade == 'E1':
         return 'D-'
-    elif (grade == 'E2' or grade == 'E3' or grade == 'F1' or grade == 'F2' or
-          grade == 'F3' or grade == 'G1' or grade == 'G2'):
+    elif (grade == 'E2' or grade == 'E3' or grade == 'F1' or grade == 'F2'
+          or grade == 'F3' or grade == 'G1' or grade == 'G2'):
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError

@@ -1,6 +1,7 @@
-# conversion function for Nigeria
-# letter grades
-def convert_nigeria(input):
+def convert_nigeria(input: str) -> str:
+    """Conversion function for Nigeria.
+    Letter grades.
+    """
     grade = input.upper()
 
     if grade == 'A' or grade == 'AB':
@@ -15,16 +16,18 @@ def convert_nigeria(input):
         return 'C'
     elif grade == 'F':
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for South Africa
-# number grades
-# grades range from 0 - 100
-def convert_south_africa(input):
+
+def convert_south_africa(input: str) -> str:
+    """Conversion function for South Africa.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 75 and grade <= 100:
@@ -37,16 +40,18 @@ def convert_south_africa(input):
         return 'C'
     elif grade >= 0 and grade < 50:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Uganda
-# number grades
-# grades range from 1 - 9
-def convert_uganda(input):
+
+def convert_uganda(input: str) -> str:
+    """Conversion function for Uganda.
+    Number grades.
+    Grades range from 1 - 9.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade == 9:
@@ -61,5 +66,5 @@ def convert_uganda(input):
         return 'B'
     elif grade >= 1 and grade < 3:
         return 'A'
-    else: # invalid
+    else:  # invalid
         raise ValueError

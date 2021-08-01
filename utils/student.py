@@ -1,48 +1,70 @@
-# representation of a student defined via each line of the input csv file
-class Student:
+# base imports
+from typing import Dict, List
 
-    def __init__(self, id_primary, id_secondary, scale_type, row):
+# relative imports
+from utils.course import Course
+
+
+class Student:
+    """Representation of a student.
+    Each student defined via each line of the input CSV file.
+    """
+    def __init__(self, id_primary: str, id_secondary: str,
+                 scale_type: str, row: int) -> None:
+        """Init a new Student."""
         # input variables taken from CSV file
-        self.id_primary = id_primary
-        self.id_secondary = id_secondary
-        self.scale_type = scale_type
+        self._id_primary = id_primary
+        self._id_secondary = id_secondary
+        self._scale_type = scale_type
 
         # list of courses associated with student
-        self.courses = []
+        self._courses: List['Course'] = []
 
         # variables used for calculating final gpa
-        self.grade_point_sum = None
-        self.unit_sum = None
-        self.final_gpa = None
+        self._grade_point_sum = float('-inf')
+        self._unit_sum = float('-inf')
+        self._final_gpa = float('-inf')
 
         # debugging
-        self.row = row
+        self._row = row
 
-    # push course into student's list of courses
-    def add_course(self, course):
-        self.courses.append(course)
+    def add_course(self, course: 'Course') -> None:
+        """Push a course into the student's list of courses."""
+        self._courses.append(course)
 
-    # convert all courses in the student's list to United States equivalent
-    def convert_classes(self, india_10_dict):
-        for current_course in self.courses:
+    def get_number_of_courses(self) -> int:
+        """Get the number of courses this student currently has."""
+        return len(self._courses)
+
+    def convert_classes(self,
+                        india_10_dict: Dict[str, Dict[str, str]]) -> None:
+        """Convert all courses in the student's list to the US equivalent."""
+        for current_course in self._courses:
             current_course.convert_to_letter(india_10_dict)
 
-    # calculate final gpa from converted courses
-    def calculate_gpa(self):
-        # gpa formula (c = class)
-        # numerator = c1 units * c1 grade points + c2 units * c2 grade points + ...
-        # denominator = c1 units + c2 units + ...
-        # final gpa = numerator / denominator
-        self.grade_point_sum = 0
-        self.unit_sum = 0
+    def calculate_gpa(self) -> None:
+        """Calculate final GPA from converted courses.
 
-        for current_course in self.courses:
-            self.grade_point_sum += current_course.letter_grade_points * current_course.units
-            self.unit_sum += current_course.units
+        GPA Formula (c = class)
 
-        self.final_gpa = self.grade_point_sum / self.unit_sum
+        numerator = c1 units * c1 grade points + c2 units * c2 points + ...
+        denominator = c1 units + c2 units + ...
+        final gpa = numerator / denominator
+        """
+        self._grade_point_sum = 0
+        self._unit_sum = 0
 
-    # string containing final gpa
-    def output_gpa(self):
-        return str(self.id_primary + ' - ' + self.id_secondary + ' (' + self.scale_type + ') | GPA: ' +
-            '{:.3f}'.format(self.final_gpa) + ', Units: ' + str(self.unit_sum) + '\n')
+        for current_course in self._courses:
+            self._grade_point_sum += (current_course.get_letter_grade_points()
+                                      * current_course.get_units())
+            self._unit_sum += current_course.get_units()
+
+        self._final_gpa = self._grade_point_sum / self._unit_sum
+
+    def output_gpa(self) -> str:
+        """Return a string containing this student's final GPA."""
+        return str(self._id_primary + ' - ' + self._id_secondary + ' ('
+                   + self._scale_type + ') | GPA: '
+                   + '{:.3f}'.format(self._final_gpa) + ', Units: '
+                   + str(self._unit_sum) + '\n'
+                   )

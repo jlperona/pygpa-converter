@@ -1,10 +1,12 @@
-# conversion function for United States and other grades already in grade point form
-# number grades
-# numbers range from 0 - 4.3
-def convert_4(input):
+def convert_4(input: str) -> float:
+    """Conversion function for United States.
+    Also used for other grades already in grade point form.
+    Number grades.
+    Numbers range from 0 - 4.3.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade > 4.3 or grade < 0:
@@ -12,13 +14,15 @@ def convert_4(input):
     else:
         return min(4.0, grade)
 
-# conversion function for Argentina
-# number grades
-# numbers range from 0 - 10
-def convert_argentina(input):
+
+def convert_argentina(input: str) -> str:
+    """Conversion function for Argentina.
+    Number grades.
+    Numbers range from 0 - 10.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 9 and grade <= 10:
@@ -33,16 +37,18 @@ def convert_argentina(input):
         return 'C'
     elif grade >= 0 and grade < 4:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Brazil
-# number grades
-# numbers range from 0 - 100
-def convert_brazil(input):
+
+def convert_brazil(input: str) -> str:
+    """Conversion function for Brazil.
+    Number grades.
+    Numbers range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 90 and grade <= 100:
@@ -55,18 +61,22 @@ def convert_brazil(input):
         return 'D'
     elif grade >= 0 and grade < 30:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Brazil single letter grades
-# alias of United States
-# single letter grades
-def convert_brazil_single(input):
+
+def convert_brazil_single(input: str) -> str:
+    """Conversion function for Brazil single letter grades.
+    Alias of United States.
+    Single letter grades.
+    """
     return convert_united_states(input)
 
-# conversion function for Brazil double letter grades
-# double letter grades
-def convert_brazil_double(input):
+
+def convert_brazil_double(input: str) -> str:
+    """Conversion function for Brazil double letter grades.
+    Double letter grades.
+    """
     grade = input.upper()
 
     if grade == 'SS':
@@ -77,22 +87,26 @@ def convert_brazil_double(input):
         return 'C'
     elif grade == 'MI' or grade == 'II':
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Canada
-# alias of United States
-# letter grades
-def convert_canada(input):
+
+def convert_canada(input: str) -> str:
+    """Conversion function for Canada.
+    Alias of United States.
+    Letter grades.
+    """
     return convert_united_states(input)
 
-# conversion function for British Columbia, Canada
-# number grades
-# grades range from 0 - 100
-def convert_canada_british_columbia(input):
+
+def convert_canada_british_columbia(input: str) -> str:
+    """Conversion function for British Columbia, Canada.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 90 and grade <= 100:
@@ -117,16 +131,18 @@ def convert_canada_british_columbia(input):
         return 'D'
     elif grade >= 0 and grade < 50:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Ontario, Canada
-# number grades
-# grades range from 0 - 100
-def convert_canada_ontario(input):
+
+def convert_canada_ontario(input: str) -> str:
+    """Conversion function for Ontario, Canada.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 90 and grade <= 100:
@@ -141,16 +157,18 @@ def convert_canada_ontario(input):
         return 'D'
     elif grade >= 0 and grade < 50:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Mexico
-# number grades
-# grades range from 0 - 10
-def convert_mexico(input):
+
+def convert_mexico(input: str) -> str:
+    """Conversion function for Mexico.
+    Number grades.
+    Grades range from 0 - 10.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 9 and grade <= 10:
@@ -161,16 +179,18 @@ def convert_mexico(input):
         return 'C'
     elif grade >= 0 and grade < 6:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for Peru
-# number grades
-# grades range from 0 - 20
-def convert_peru(input):
+
+def convert_peru(input: str) -> str:
+    """Conversion function for Peru.
+    Number grades
+    Grades range from 0 - 20.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 14 and grade <= 20:
@@ -183,20 +203,24 @@ def convert_peru(input):
         return 'D'
     elif grade >= 0 and grade < 10:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for United States
-# letter grades
-# only verifies validity of the input grade
-def convert_united_states(input):
+
+def convert_united_states(input: str) -> str:
+    """Conversion function for United States.
+    Letter grades.
+    Only verifies validity of the input grade.
+    """
     # length of input should only be one or two characters, example 'A' or 'A-'
     if not (len(input) == 1 or len(input) == 2):
         raise ValueError
 
     caps_input = input.upper()
 
-    if not (caps_input[0] == 'A' or caps_input[0] == 'B' or caps_input[0] == 'C' or caps_input[0] == 'D' or caps_input[0] == 'F'):
+    if not (caps_input[0] == 'A' or caps_input[0] == 'B'
+            or caps_input[0] == 'C' or caps_input[0] == 'D'
+            or caps_input[0] == 'F'):
         raise ValueError
 
     if len(caps_input) == 2:

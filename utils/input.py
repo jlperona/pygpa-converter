@@ -1,16 +1,23 @@
+# base imports
+import argparse
 import csv
 
+from typing import List
+
+# relative imports
 from utils.student import Student
 from utils.course import Course
 
-# read input file and place parsed data in all_students
-def parse_input(args, all_students):
+
+def parse_input(args: argparse.Namespace,
+                all_students: List['Student']) -> None:
+    """Read input file and place parsed data in all_students."""
     # open file and begin reading data
     with open(args.infile) as infile:
         csvreader = csv.reader(infile)
 
         # skip header line depending on command line arguments
-        if args.noheader == False:
+        if args.noheader is False:
             next(csvreader)
 
         # for every line in the csv file
@@ -31,12 +38,13 @@ def parse_input(args, all_students):
                 column_number += 1
                 scale_type = next(row_it)
             except StopIteration:
-                invalid_student_exception = str('Not enough data input on row '
-                    + str(line_number) + '.')
-                raise Exception(invalid_student_exception) from None
+                msg = str('Not enough data input on row '
+                          + str(line_number) + '.')
+                raise Exception(msg)
 
             # create new student
-            current_student = Student(id_primary, id_secondary, scale_type, line_number)
+            current_student = Student(id_primary, id_secondary,
+                                      scale_type, line_number)
             all_students.append(current_student)
 
             # parse remaining columns in sets of two
@@ -60,20 +68,24 @@ def parse_input(args, all_students):
 
                     # if string is empty, then there's an issue with the data
                     if not current_grade:
-                        odd_data_exception = str('Odd number of class data for student '
-                            + str(id_primary) + ', row ' + str(line_number) + '.')
-                        raise Exception(odd_data_exception)
+                        msg = str('Odd number of class data for student '
+                                  + str(id_primary) + ', row '
+                                  + str(line_number) + '.')
+                        raise Exception(msg)
                 # if iterator stops, then there's an issue with the data
                 except StopIteration:
-                    odd_data_exception = str('Odd number of class data for student '
-                        + str(id_primary) + ', row ' + str(line_number) + '.')
-                    raise Exception(odd_data_exception) from None
+                    msg = str('Odd number of class data for student '
+                              + str(id_primary) + ', row '
+                              + str(line_number) + '.')
+                    raise Exception(msg)
 
                 current_student.add_course(
-                    Course(current_units, current_grade, scale_type, line_number, column_number))
+                    Course(current_units, current_grade,
+                           scale_type, line_number, column_number)
+                )
 
             # if no courses added, then no courses existed in the input
-            if len(current_student.courses) == 0:
-                zero_courses_exception = str('No courses input for student '
-                    + str(id_primary) + ', row ' + str(line_number) + '.')
-                raise Exception(zero_courses_exception)
+            if len(current_student._courses) == 0:
+                msg = str('No courses input for student ' + str(id_primary)
+                          + ', row ' + str(line_number) + '.')
+                raise Exception(msg)

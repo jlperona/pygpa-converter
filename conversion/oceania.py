@@ -1,6 +1,7 @@
-# conversion function for Australian letter grades
-# letter grades
-def convert_australia(input):
+def convert_australia(input: str) -> str:
+    """Conversion function for Australian letter grades.
+    Letter grades.
+    """
     grade = input.upper()
 
     # some of these grades were not in Scholaro's database
@@ -17,16 +18,18 @@ def convert_australia(input):
         return 'D'
     elif grade == 'N' or grade == 'F' or grade == 'FL':
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for New South Wales, Australia
-# number grades
-# grades range from 0 - 100
-def convert_australia_new_south_wales(input):
+
+def convert_australia_new_south_wales(input: str) -> str:
+    """Conversion function for New South Wales, Australia.
+    Number grades.
+    Grades range from 0 - 100.
+    """
     try:
         grade = float(input)
-    except ValueError: # invalid conversion
+    except ValueError:  # invalid conversion
         raise
 
     if grade >= 85 and grade <= 100:
@@ -39,12 +42,14 @@ def convert_australia_new_south_wales(input):
         return 'C'
     elif grade >= 0 and grade < 50:
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
 
-# conversion function for New Zealand
-# letter grades
-def convert_new_zealand(input):
+
+def convert_new_zealand(input: str) -> str:
+    """Conversion function for New Zealand.
+    Letter grades.
+    """
     grade = input.upper()
 
     if grade == 'A+':
@@ -71,5 +76,5 @@ def convert_new_zealand(input):
         return 'F'
     elif grade == 'F':
         return 'F'
-    else: # invalid
+    else:  # invalid
         raise ValueError
